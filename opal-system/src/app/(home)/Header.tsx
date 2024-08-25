@@ -18,17 +18,9 @@ const Header = () => {
                 <Link href='/hotels'>Hotels</Link>
             </li>
             <button className="bg-[#6b4f4f] text-white rounded h-12 px-6 mt-4 md:mt-0 transition duration-300 ease-in-out hover:bg-[#5a3e3e]">
-                Sign In
+                <Link href='/SignIn'>Sign In</Link>
             </button>
-            {/* <li className="ml-2">
-                    <FaBell className="cursor-pointer"/>
-                </li> 
-            <li className="flex items-center">
-                <Link href='/'>
-                    <FaUserCircle className="curser-pointer"/>                   
-                </Link>
-            </li> */}
-            
+                        
         </ul>
     </header>
   )
