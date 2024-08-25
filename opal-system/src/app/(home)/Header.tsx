@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {FaBell, FaUserCircle} from 'react-icons/fa';
+//import {FaBell, FaUserCircle} from 'react-icons/fa';
 
 const Header = () => {
   return (
@@ -15,7 +15,7 @@ const Header = () => {
                 <Link href='/'>Home</Link>
             </li>
             <li className="hover:-translate-y-2 duration-500 transition-all"> 
-                <Link href='/'>Hotels</Link>
+                <Link href='/hotels'>Hotels</Link>
             </li>
             <button className="bg-[#6b4f4f] text-white rounded h-12 px-6 mt-4 md:mt-0 transition duration-300 ease-in-out hover:bg-[#5a3e3e]">
                 Sign In
