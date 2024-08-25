@@ -14,26 +14,29 @@ const Footer = () => {
             <div className="flex flex-col gap-2">
               <div className="flex items-center">
                 <BsFillSendFill className="text-xl" />
-                <p className="ml-2">hotels.com</p>
+                <p className="ml-2 cursor-pointer hover:underline">hotels.com</p>
               </div>
               <div className="flex items-center">
                 <BsTelephoneOutbound className="text-xl" />
-                <p className="ml-2">011 234 5678</p>
+                <p className="ml-2 cursor-pointer hover:underline">011 234 5678</p>
               </div>
               <div className="flex items-center">
                 <FaFacebook className="text-xl" />
-                <p className="ml-2">CeylonX Hotels</p>
+                <p className="ml-2 cursor-pointer hover:underline">CeylonX Hotels</p>
               </div>
               <div className="flex items-center">
                 <FaInstagram className="text-xl" />
-                <p className="ml-2">ceylonxhotels</p>
+                <p className="ml-2 cursor-pointer hover:underline">ceylonxhotels</p>
               </div>
             </div>
           </div>
 
           {/* Middle Section: About Us */}
           <div className="flex flex-col md:w-1/3 space-y-4 text-center md:text-left">
-            <h4 className="font-semibold text-2xl">About Us</h4>
+            <Link href='/Details'>
+              <h4 className="font-semibold text-2xl cursor-pointer hover:underline">About Us</h4>
+              </Link>
+              
             <div className="flex flex-col gap-2">
               <p>Our Story</p>
               <p>Mission & Vision</p>
@@ -46,7 +49,9 @@ const Footer = () => {
 
           {/* Right Section: Our Services */}
           <div className="flex flex-col md:w-1/3 space-y-4 text-center md:text-left">
-            <h4 className="font-semibold text-2xl">Our Services</h4>
+            <Link href="/Details#our-services">
+              <h4 className="font-semibold text-2xl cursor-pointer hover:underline">Our Services</h4>
+            </Link>
             <div className="flex flex-col gap-2">
               <p>Dining Experience</p>
               <p>Wellness</p>
