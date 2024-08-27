@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 const defaultFormData = {
@@ -76,7 +77,7 @@ const Login = () => {
             Forgot Password?
           </button>
           <button className="text-blue-700 underline hover:text-blue-900">
-            Don't have an account? Sign Up
+            < Link href='/Register'>Don't have an account? Sign Up</Link>
           </button>
         </div>
       </div>

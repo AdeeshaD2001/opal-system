@@ -24,7 +24,7 @@ const NavBar = () => {
 
         {/* Hamburger Menu Icon */}
         <button
-          className="text-3xl text-white lg:hidden focus:outline-none"
+          className="text-3xl text-white absolute top-4 right-4 lg:hidden focus:outline-none"
           onClick={toggleMenu}
         >
           {isOpen ? <FaTimes /> : <FaBars />}
@@ -36,22 +36,28 @@ const NavBar = () => {
             isOpen ? "block" : "hidden"
           } w-full lg:w-auto`}
         >
+        
           <ul className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full lg:w-auto space-y-4 lg:space-y-0 lg:space-x-8 mt-4 lg:mt-0">
             <li className="hover:-translate-y-2 duration-500 transition-all text-white">
               <Link href="/">Home</Link>
             </li>
             <li className="hover:-translate-y-2 duration-500 transition-all text-white">
-              <Link href="/">Hotels</Link>
+              <Link href="/hotels">Hotels</Link>
             </li>
             <li className="hover:-translate-y-2 duration-500 transition-all text-white">
-              <Link href="/">About Us</Link>
+              <Link href="/Details">About Us</Link>
             </li>
             <li className="hover:-translate-y-2 duration-500 transition-all text-white">
               <Link href="/">Contact</Link>
             </li>
             <li className="lg:ml-4">
               <button className="bg-white text-[#836666] rounded h-12 px-6 transition duration-300 ease-in-out hover:bg-gray-200">
-                Sign In
+                <Link href='/LogIn'>Sign In</Link>
+              </button>
+            </li>
+            <li className="lg:ml-4">
+              <button className="bg-white text-[#836666] rounded h-12 px-6 transition duration-300 ease-in-out hover:bg-gray-200">
+                <Link href='/Register'>Register</Link>
               </button>
             </li>
           </ul>
