@@ -1,16 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaFacebook } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
 
 const defaultFormData = {
   email: "",
-  name: "",
   password: "",
 };
 
-const SignUp = () => {
+const Login = () => {
   const [formData, setFormData] = useState(defaultFormData);
 
   const inputStyles =
@@ -25,9 +22,10 @@ const SignUp = () => {
     event.preventDefault();
 
     try {
-      console.log(formData);
+      console.log("Logging in with:", formData);
+      // Here you would typically handle the login process, such as calling an API.
     } catch (error) {
-      console.log(error);
+      console.log("Error during login:", error);
     } finally {
       setFormData(defaultFormData);
     }
@@ -36,15 +34,11 @@ const SignUp = () => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
-        <div className="flex flex-col items-center mb-6">
-          <h1 className="text-2xl font-bold text-[#836666]">
-            Create an Account
-          </h1>
-          <p className="text-gray-500">OR</p>
-          <div className="flex space-x-3 mt-4">
-            <FaFacebook className="text-4xl cursor-pointer text-blue-600 hover:scale-110 transition-transform" />
-            <FcGoogle className="text-4xl cursor-pointer hover:scale-110 transition-transform" />
-          </div>
+        <div className="mb-8 text-center">
+          <h1 className="text-2xl font-bold text-[#836666] mb-2">Log In</h1>
+          <p className="text-gray-500">
+            Welcome back! Please log in to your account.
+          </p>
         </div>
 
         <form className="space-y-6" onSubmit={handleSubmit}>
@@ -55,16 +49,6 @@ const SignUp = () => {
             required
             className={inputStyles}
             value={formData.email}
-            onChange={handleInputChange}
-          />
-
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter your name"
-            required
-            className={inputStyles}
-            value={formData.name}
             onChange={handleInputChange}
           />
 
@@ -81,15 +65,18 @@ const SignUp = () => {
 
           <button
             type="submit"
-            className="w-full bg-[#836666] text-white rounded-lg py-3 transition duration-300 ease-in-out hover:bg-[#5a3e3e]"
+            className="w-full bg-[#6b4f4f] text-white rounded-lg py-3 transition duration-300 ease-in-out hover:bg-[#5a3e3e]"
           >
-            Sign Up
+            Log In
           </button>
         </form>
 
-        <div className="mt-6 text-center">
+        <div className="mt-6 flex flex-col items-center space-y-2">
+          <button className="text-gray-700 underline hover:text-black">
+            Forgot Password?
+          </button>
           <button className="text-blue-700 underline hover:text-blue-900">
-            Already have an account?
+            Don't have an account? Sign Up
           </button>
         </div>
       </div>
@@ -97,4 +84,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Login;
