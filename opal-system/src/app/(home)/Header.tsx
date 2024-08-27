@@ -10,6 +10,7 @@ const Header = () => {
             </Link>
         </div>
 
+        
         <ul className='flex item-center justify-between w-full md:w-1/3 mt-4'>
             <li className="hover:-translate-y-2 duration-500 transition-all"> 
                 <Link href='/'>Home</Link>
@@ -17,8 +18,11 @@ const Header = () => {
             <li className="hover:-translate-y-2 duration-500 transition-all"> 
                 <Link href='/hotels'>Hotels</Link>
             </li>
-            <button className="bg-[#6b4f4f] text-white rounded h-12 px-6 mt-4 md:mt-0 transition duration-300 ease-in-out hover:bg-[#5a3e3e]">
+            <button className="bg-[#6b4f4f] text-white rounded h-10 px-4 mt-4 md:mt-0 transition duration-300 ease-in-out hover:bg-[#5a3e3e]">
                 <Link href='/SignIn'>Sign In</Link>
+            </button>
+            <button className="bg-[#6b4f4f] text-white rounded h-10 px-4 mt-4 md:mt-0 transition duration-300 ease-in-out hover:bg-[#5a3e3e]">
+                <Link href='/Register'>Register</Link>
             </button>
                         
         </ul>

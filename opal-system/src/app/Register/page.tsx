@@ -1,9 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import { FaFacebook } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 const defaultFormData = {
     email: '',
+    name: '',
     password: '',
 };
 
@@ -38,8 +41,12 @@ const SignUp = () => {
           <h1 className="text-xl font-bold leading-tight tracking-tight md:text-2xl">
             Create an Account
           </h1>
-          <p>Welcome Back</p>
-          
+          <p>OR</p>
+          <span className="inline-flex items-center">
+            <FaFacebook className="mr-3 text-4xl cursor-pointer text-blue" />
+            |
+            <FcGoogle className="ml-3 text-4xl cursor-pointer" />
+          </span>
         </div>
 
         <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
@@ -52,7 +59,17 @@ const SignUp = () => {
                 value={formData.email}
                 onChange={handleInputChange}
             />
-            
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+                className={inputStyles}
+                value={formData.name}
+                onChange={handleInputChange}
+            />
+
             <input
                 type="password"
                 name="password"
@@ -68,16 +85,12 @@ const SignUp = () => {
                 <button 
                     type="submit"                
                     className="bg-[#6b4f4f] text-white rounded h-9 px-4 mt-4 md:mt-0 transition duration-300 ease-in-out hover:bg-[#5a3e3e] w-full">
-                    Login
+                    Sign Up
                 </button>
             </div>
 
-            <div className=" flex justify-center">
-
-                <div className="flex flex-col items-center justify-center space-y-2">
-                    <button className="text-black-700 underline">Forgot Password?</button>
-                    <button className="text-blue-700 underline">Don't have an account?</button>
-                </div>
+            <div className="flex justify-center">
+              <button className= "text-blue-700 underline">Already have an account?</button>
             </div>
 
         </form>

@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="flex flex-col gap-2">
               <div className="flex items-center">
                 <BsFillSendFill className="text-xl" />
-                <p className="ml-2 cursor-pointer hover:underline">hotels.com</p>
+                <p className="ml-2 cursor-pointer hover:underline">ceylonxhotels.com</p>
               </div>
               <div className="flex items-center">
                 <BsTelephoneOutbound className="text-xl" />
