@@ -51,15 +51,12 @@ const NavBar = () => {
             </li>
             <li className="lg:ml-4">
               <button className="bg-white text-[#836666] rounded h-12 px-6 transition duration-300 ease-in-out hover:bg-gray-200">
-                <Link href="/LogIn">Sign In</Link>
+                <Link href="/LogIn">Log In</Link>
               </button>
             </li>
             <li className="lg:ml-4">
               <button className="bg-white text-[#836666] rounded h-12 px-6 transition duration-300 ease-in-out hover:bg-gray-200">
-                <Link href="/Register">Register</Link>
-              </button>
-              <button className="bg-[#836666] text-white rounded-full h-12 px-6 transition duration-300 ease-in-out hover:bg-[#6b4f4f] shadow-lg">
-                Login
+                <Link href="/SignIn">Sign In</Link>
               </button>
             </li>
           </ul>
