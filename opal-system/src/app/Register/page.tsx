@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -89,7 +90,7 @@ const SignUp = () => {
 
         <div className="mt-6 text-center">
           <button className="text-blue-700 underline hover:text-blue-900">
-            Already have an account?
+            <Link href="/LogIn">Already have an account? Sign In</Link>
           </button>
         </div>
       </div>

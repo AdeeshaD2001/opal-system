@@ -38,20 +38,34 @@ const Footer = () => {
               </Link>
               
             <div className="flex flex-col gap-2">
-              <p>Our Story</p>
-              <p>Mission & Vision</p>
-              <p>Terms of Service</p>
-              <p>Privacy Policy</p>
-              <p>Cookie Policy</p>
-              <p>FAQs</p>
+              <p className="cursor-pointer hover:underline">
+                <Link href="/Details#our-story">Our Story</Link>
+              </p>
+              <p className="cursor-pointer hover:underline">
+                <Link href="/Details#mission-vission">Mission & Vision</Link>
+              </p>
+              <p className="cursor-pointer hover:underline">
+                <Link href="/Details#terms-of-services">Terms of Service</Link>
+              </p>
+              <p className="cursor-pointer hover:underline">
+                <Link href="/Details#privacy-policy">Privacy Policy</Link>
+              </p>
+              <p className="cursor-pointer hover:underline">
+                <Link href="/Details#cookie-policy">Cookie Policy</Link>
+              </p>
+              <p className="cursor-pointer hover:underline">
+                <Link href="/Details#faqs">FAQs</Link>
+              </p>
+              
             </div>
           </div>
 
           {/* Right Section: Our Services */}
           <div className="flex flex-col md:w-1/3 space-y-4 text-center md:text-left">
-            <Link href="/Details#our-services">
-              <h4 className="font-semibold text-2xl cursor-pointer hover:underline">Our Services</h4>
-            </Link>
+          
+            
+              <h4 className="font-semibold text-2xl">Our Services</h4>
+
             <div className="flex flex-col gap-2">
               <p>Dining Experience</p>
               <p>Wellness</p>
