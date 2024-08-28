@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import ChatWidget from "@/components/ChatWidget";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,10 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body style={{ backgroundColor: "white", margin: 0 }}>
+      <body>
         <NavBar />
         <main>{children}</main>{" "}
         {/* This will render the specific page content */}
+        <ChatWidget />
         <Footer />
       </body>
     </html>
