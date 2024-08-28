@@ -62,9 +62,8 @@ const Footer = () => {
 
           {/* Right Section: Our Services */}
           <div className="flex flex-col md:w-1/3 space-y-4 text-center md:text-left">
-            {/* <Link href="/Details#our-services">
-              <h4 className="font-semibold text-2xl cursor-pointer hover:underline">Our Services</h4>
-            </Link> */}
+          
+            
               <h4 className="font-semibold text-2xl">Our Services</h4>
 
             <div className="flex flex-col gap-2">
