@@ -174,21 +174,24 @@ const HotelCard: React.FC<Hotel> = ({
   rating,
   reviews,
   image,
-  deals,
   rooms,
 }) => (
   <div
     key={id}
-    className="bg-white rounded-lg shadow-lg p-4 mb-6 flex flex-col"
+    className="bg-white rounded-lg shadow-lg p-4 mb-6 flex flex-col sm:flex-row"
   >
-    {/* Top: Hotel Image (full width on small screens) */}
-    <div className="w-full mb-4">
-      <img src={image} alt={name} className="w-full rounded-lg object-cover" />
+    {/* Image and Details Wrapper */}
+    <div className="w-full sm:w-1/3 mb-4 sm:mb-0 sm:mr-4">
+      <img
+        src={image}
+        alt={name}
+        className="w-full h-full rounded-lg object-cover"
+      />
     </div>
 
-    {/* Bottom: Hotel Details */}
-    <div>
-      <h3 className="font-bold text-xl mt-2">{name}</h3>
+    {/* Hotel Details Wrapper */}
+    <div className="w-full sm:w-2/3 flex flex-col">
+      <h3 className="font-bold text-xl">{name}</h3>
       <p className="text-zinc-600 mt-1">{description}</p>
       <div className="flex items-center mt-2">
         <span className="text-yellow-500">{"⭐".repeat(rating)}</span>
@@ -196,7 +199,7 @@ const HotelCard: React.FC<Hotel> = ({
       </div>
 
       {/* Room Cards Section */}
-      <div className="mt-4">
+      <div className="mt-4 flex-1">
         <h4 className="font-semibold text-lg">Available Rooms:</h4>
         <div className="flex flex-col space-y-4 mt-2">
           {rooms.map((room, index) => (
