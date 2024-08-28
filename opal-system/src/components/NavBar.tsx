@@ -19,12 +19,12 @@ const NavBar = () => {
           href="/"
           className="text-white text-3xl md:text-5xl font-extrabold tracking-wider"
         >
-          <span className="text-[#836666]">CeylonX</span> Hotels
+          <span className="text-[#B99595]">CeylonX</span> Hotels
         </Link>
 
         {/* Hamburger Menu Icon */}
         <button
-          className="text-3xl text-white lg:hidden focus:outline-none rounded"
+          className="text-3xl text-white lg:hidden focus:outline-none rounded absolute top-4 right-4"
           onClick={toggleMenu}
         >
           {isOpen ? <FaTimes /> : <FaBars />}
@@ -56,7 +56,7 @@ const NavBar = () => {
             </li>
             <li className="lg:ml-4">
               <button className="bg-white text-[#836666] rounded h-12 px-6 transition duration-300 ease-in-out hover:bg-gray-200">
-                <Link href="/SignIn">Sign In</Link>
+                <Link href="/SignUp">Sign Up</Link>
               </button>
             </li>
           </ul>
