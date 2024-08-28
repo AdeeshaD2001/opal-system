@@ -2,15 +2,24 @@
 
 import React, { useState, useEffect } from "react";
 
+interface Room {
+  type: string;
+  amenities: string[];
+  availability: boolean;
+  price: number;
+  adultCount: number; // Added
+  childCount: number; // Added
+}
+
 interface Hotel {
   id: number;
   name: string;
   description: string;
-  price: number;
   rating: number;
   reviews: number;
   image: string;
   deals: string[];
+  rooms: Room[]; // New property for room details
 }
 
 const hotelData: Hotel[] = [
@@ -18,31 +27,82 @@ const hotelData: Hotel[] = [
     id: 1,
     name: "Ocean View Resort",
     description: "Beachfront property with stunning views.",
-    price: 250,
     rating: 4,
     reviews: 320,
     image: "https://placehold.co/400x200",
     deals: ["No prepayment needed"],
+    rooms: [
+      {
+        type: "Standard Room",
+        amenities: ["Sea view", "Free Wi-Fi", "King-size bed"],
+        availability: true,
+        price: 250,
+        adultCount: 2,
+        childCount: 0,
+      },
+      {
+        type: "Deluxe Room",
+        amenities: ["Ocean view", "Free Wi-Fi", "King-size bed", "Balcony"],
+        availability: false,
+        price: 350,
+        adultCount: 2,
+        childCount: 1,
+      },
+    ],
   },
   {
     id: 2,
     name: "City Lights Hotel",
     description: "Central location with modern amenities.",
-    price: 120,
     rating: 4,
     reviews: 680,
     image: "https://placehold.co/400x200",
     deals: ["Special Offer"],
+    rooms: [
+      {
+        type: "Standard Room",
+        amenities: ["City view", "Free Wi-Fi", "Queen-size bed"],
+        availability: true,
+        price: 120,
+        adultCount: 1,
+        childCount: 0,
+      },
+      {
+        type: "Executive Suite",
+        amenities: ["City view", "Free Wi-Fi", "King-size bed", "Mini bar"],
+        availability: true,
+        price: 220,
+        adultCount: 2,
+        childCount: 2,
+      },
+    ],
   },
   {
     id: 3,
     name: "Mountain Lodge",
     description: "Cozy retreat in the heart of the mountains.",
-    price: 180,
     rating: 5,
     reviews: 890,
     image: "https://placehold.co/400x200",
     deals: ["Fully refundable"],
+    rooms: [
+      {
+        type: "Cabin Room",
+        amenities: ["Mountain view", "Free Wi-Fi", "Fireplace"],
+        availability: true,
+        price: 180,
+        adultCount: 2,
+        childCount: 1,
+      },
+      {
+        type: "Suite",
+        amenities: ["Mountain view", "Free Wi-Fi", "Fireplace", "Jacuzzi"],
+        availability: true,
+        price: 280,
+        adultCount: 2,
+        childCount: 0,
+      },
+    ],
   },
 ];
 
@@ -78,27 +138,72 @@ const GuestCountInput: React.FC<{
   </div>
 );
 
+const RoomCard: React.FC<Room> = ({
+  type,
+  amenities,
+  availability,
+  price,
+  adultCount,
+  childCount,
+}) => (
+  <div className="relative bg-zinc-100 rounded-lg p-4 shadow-md mb-4">
+    {/* Availability Button in Top Right */}
+    <div className="absolute bottom-4 right-4">
+      <button
+        className={`${
+          availability ? "bg-green-500 text-white" : "bg-red-500 text-white"
+        } rounded-md px-4 py-1 text-sm`}
+        disabled={!availability}
+      >
+        {availability ? "Available" : "Unavailable"}
+      </button>
+    </div>
+
+    <h5 className="font-semibold">{type}</h5>
+    <p className="text-sm text-zinc-600">Amenities: {amenities.join(", ")}</p>
+    <p className="text-sm text-zinc-600">Price: ${price} per night</p>
+    <p className="text-sm text-zinc-600">Adults: {adultCount}</p>
+    <p className="text-sm text-zinc-600">Children: {childCount}</p>
+  </div>
+);
+
 const HotelCard: React.FC<Hotel> = ({
   id,
   name,
   description,
-  price,
   rating,
   reviews,
   image,
   deals,
+  rooms,
 }) => (
-  <div key={id} className="bg-white rounded-lg shadow-md p-4">
-    <img src={image} alt={name} className="w-full rounded-t-lg" />
-    <h3 className="font-bold text-xl mt-2">{name}</h3>
-    <p className="text-zinc-600">{description}</p>
-    <p className="font-bold text-2xl mt-2">${price}</p>
-    <button className="bg-yellow-500 text-white rounded-lg py-2 px-4 mt-2 hover:bg-yellow-400">
-      View deal
-    </button>
-    <div className="flex items-center mt-2">
-      <span className="text-yellow-500">{"⭐".repeat(rating)}</span>
-      <span className="text-zinc-600 ml-2">{reviews} reviews</span>
+  <div
+    key={id}
+    className="bg-white rounded-lg shadow-lg p-4 mb-6 flex flex-col"
+  >
+    {/* Top: Hotel Image (full width on small screens) */}
+    <div className="w-full mb-4">
+      <img src={image} alt={name} className="w-full rounded-lg object-cover" />
+    </div>
+
+    {/* Bottom: Hotel Details */}
+    <div>
+      <h3 className="font-bold text-xl mt-2">{name}</h3>
+      <p className="text-zinc-600 mt-1">{description}</p>
+      <div className="flex items-center mt-2">
+        <span className="text-yellow-500">{"⭐".repeat(rating)}</span>
+        <span className="text-zinc-600 ml-2">{reviews} reviews</span>
+      </div>
+
+      {/* Room Cards Section */}
+      <div className="mt-4">
+        <h4 className="font-semibold text-lg">Available Rooms:</h4>
+        <div className="flex flex-col space-y-4 mt-2">
+          {rooms.map((room, index) => (
+            <RoomCard key={index} {...room} />
+          ))}
+        </div>
+      </div>
     </div>
   </div>
 );
@@ -241,12 +346,7 @@ const HotelList: React.FC<{
   hotels: Hotel[];
   onSortChange: (sortBy: string) => void;
 }> = ({ hotels, onSortChange }) => (
-  <main className="w-full md:w-3/4 p-4">
-    <div className="flex flex-col md:flex-row md:space-x-4 mb-4">
-      <DatePicker label="Check-In" value={""} onChange={() => {}} />
-      <DatePicker label="Check-Out" value={""} onChange={() => {}} />
-      <GuestCountInput value={""} onChange={() => {}} />
-    </div>
+  <main className="w-full p-4">
     <div className="flex justify-end space-x-4 mb-4">
       <label>
         Sort by:
@@ -260,7 +360,7 @@ const HotelList: React.FC<{
         </select>
       </label>
     </div>
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <div className="flex flex-col space-y-6">
       {hotels.map((hotel) => (
         <HotelCard key={hotel.id} {...hotel} />
       ))}
@@ -274,6 +374,12 @@ const HotelSearch: React.FC = () => {
 
   const handleFilterChange = (filters: any) => {
     let updatedHotels = hotelData.filter((hotel) => {
+      const matchesPriceRange = hotel.rooms.some(
+        (room) =>
+          room.price >= filters.priceRange[0] &&
+          room.price <= filters.priceRange[1]
+      );
+
       return (
         (!filters.refundable || hotel.deals.includes("Fully refundable")) &&
         (!filters.noPrepayment ||
@@ -282,11 +388,11 @@ const HotelSearch: React.FC = () => {
         (!filters.fiveStar || hotel.rating === 5) &&
         (!filters.breakfastIncluded ||
           hotel.deals.includes("Breakfast included")) &&
-        (!filters.budget || hotel.price <= 100) &&
+        (!filters.budget ||
+          Math.max(...hotel.rooms.map((room) => room.price)) <= 100) &&
         (!filters.hotels || hotel.name.toLowerCase().includes("hotel")) &&
         (!filters.bnb || hotel.name.toLowerCase().includes("bnb")) &&
-        hotel.price >= filters.priceRange[0] &&
-        hotel.price <= filters.priceRange[1]
+        matchesPriceRange
       );
     });
 
@@ -300,9 +406,17 @@ const HotelSearch: React.FC = () => {
   const sortHotels = (hotels: Hotel[], sortBy: string) => {
     switch (sortBy) {
       case "priceAsc":
-        return hotels.sort((a, b) => a.price - b.price);
+        return hotels.sort((a, b) => {
+          const maxPriceA = Math.max(...a.rooms.map((room) => room.price));
+          const maxPriceB = Math.max(...b.rooms.map((room) => room.price));
+          return maxPriceA - maxPriceB;
+        });
       case "priceDesc":
-        return hotels.sort((a, b) => b.price - a.price);
+        return hotels.sort((a, b) => {
+          const maxPriceA = Math.max(...a.rooms.map((room) => room.price));
+          const maxPriceB = Math.max(...b.rooms.map((room) => room.price));
+          return maxPriceB - maxPriceA;
+        });
       case "rating":
         return hotels.sort((a, b) => b.rating - a.rating);
       default:
@@ -322,5 +436,4 @@ const HotelSearch: React.FC = () => {
     </div>
   );
 };
-
 export default HotelSearch;

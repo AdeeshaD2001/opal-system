@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ backgroundColor: "white", margin: 0 }}>
         <NavBar />
         <main>{children}</main>{" "}
         {/* This will render the specific page content */}

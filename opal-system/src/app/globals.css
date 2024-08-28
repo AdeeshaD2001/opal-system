@@ -16,14 +16,11 @@
   }
 }
 
+/* globals.css */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: white;
+  margin: 0; /* Ensure there's no default margin */
+  font-family: "Inter", sans-serif; /* Apply the Inter font */
 }
 
 @layer utilities {
