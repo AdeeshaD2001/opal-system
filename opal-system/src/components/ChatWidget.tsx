@@ -59,22 +59,9 @@ const MyChatBot = () => {
   const flow = {
     start: {
       message: "Welcome to our Hotel! How can I assist you today?",
-      options: ["Room Reservation", "Restaurant Booking", "General Inquiry"],
-      path: (option) => {
-        switch (option) {
-          case "Room Reservation":
-            return "room_reservation";
-          case "Restaurant Booking":
-            return "restaurant_booking";
-          case "General Inquiry":
-            return "general_inquiry";
-          default:
-            return "start";
-        }
-      },
     },
-    // Add the rest of the flow here...
   };
+  // Add the rest of the flow here...
 
   return <ChatBot options={options} flow={flow} />;
 };
