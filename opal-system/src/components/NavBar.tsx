@@ -12,7 +12,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className="bg-[#6b4f4f] shadow-md py-6 px-6 lg:px-8 rounded-t-xl rounded-b-xl">
+    <header className="bg-[#6b4f4f] shadow-md py-6 px-6 lg:px-8 ">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link
