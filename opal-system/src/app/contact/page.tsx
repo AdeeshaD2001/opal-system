@@ -8,7 +8,7 @@ const Contact = () => {
       {/* Main Content */}
       <main className="flex-grow container mx-auto flex flex-col lg:flex-row items-center justify-between py-16 px-6">
         <div className="w-full lg:w-1/2 flex justify-center">
-          <img src="/images/contact-illustration.png" alt="Contact Us Illustration" className="w-full max-w-md" />
+          <img src="img/Contact.png" alt="Contact Us Illustration" className="w-full max-w-md" />
         </div>
 
         <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
@@ -31,6 +31,7 @@ const Contact = () => {
             />
             <button type="submit"
                     className="w-full bg-[#6b4f4f] text-white py-2 rounded transition duration-300 ease-in-out hover:bg-[#5a3e3e]">
+                      Send
             </button>
           </form>
         </div>

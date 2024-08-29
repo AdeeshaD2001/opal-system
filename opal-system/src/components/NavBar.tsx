@@ -43,9 +43,7 @@ const NavBar = () => {
             <li className="hover:-translate-y-2 duration-500 transition-all text-white">
               <Link href="/hotels">Hotels</Link>
             </li>
-            <li className="hover:-translate-y-2 duration-500 transition-all text-white">
-              <Link href="/AboutUs">About Us</Link>
-            </li>
+            
             <li className="hover:-translate-y-2 duration-500 transition-all text-white">
               <Link href="/contact">Contact</Link>
             </li>

@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="flex flex-col gap-2">
               <div className="flex items-center">
                 <BsFillSendFill className="text-xl" />
-                <p className="ml-2 cursor-pointer hover:underline">ceylonxhotels.com</p>
+                <p className="ml-2 cursor-pointer hover:underline">ceylonxhotels@gmail.com</p>
               </div>
               <div className="flex items-center">
                 <BsTelephoneOutbound className="text-xl" />
@@ -33,31 +33,30 @@ const Footer = () => {
 
           {/* Middle Section: About Us */}
           <div className="flex flex-col md:w-1/3 space-y-4 text-center md:text-left">
-            <Link href='/AboutUs'>
-              <h4 className="font-semibold text-2xl cursor-pointer hover:underline">About Us</h4>
-              </Link>
+            <h4 className="font-semibold text-2xl ">About Us</h4>
               
             <div className="flex flex-col gap-2">
               <p className="cursor-pointer hover:underline">
-                <Link href="/AboutUs#our-story">Our Story</Link>
+                <Link href="/ourStory">Our Story</Link>
               </p>
               <p className="cursor-pointer hover:underline">
-                <Link href="/AboutUs#mission-vission">Mission & Vision</Link>
+                <Link href="/mission&vision">Mission & Vision</Link>
               </p>
               <p className="cursor-pointer hover:underline">
-                <Link href="/AboutUs#terms-of-services">Terms of Service</Link>
+                <Link href="/termsOfService">Terms of Service</Link>
               </p>
               <p className="cursor-pointer hover:underline">
-                <Link href="/AboutUs#privacy-policy">Privacy Policy</Link>
+                <Link href="/privacyPolicy">Privacy Policy</Link>
               </p>
               <p className="cursor-pointer hover:underline">
-                <Link href="/Details#cookie-policy">Cookie Policy</Link>
+                <Link href="/cookiePolicy">Cookie Policy</Link>
               </p>
               <p className="cursor-pointer hover:underline">
-                <Link href="/Details#faqs">FAQs</Link>
+                <Link href="/faq">FAQs</Link>
               </p>
               
             </div>
+
           </div>
 
           {/* Right Section: Our Services */}
@@ -76,6 +75,12 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <div className='py-8'>
+        <div className="max-w-7xl mx-auto px-4 text-center">
+                <p>&copy; {new Date().getFullYear()} CeylonX Hotels. All rights reserved.</p>
+        </div>
+      </div>
+
     </footer>
   );
 };

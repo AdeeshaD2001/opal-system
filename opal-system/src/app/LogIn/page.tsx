@@ -77,7 +77,7 @@ const Login = () => {
             Forgot Password?
           </button>
           <button className="text-blue-700 underline hover:text-blue-900">
-            < Link href='/Register'>Don't have an account? Sign Up</Link>
+            < Link href='/SignUp'>Don't have an account? Sign Up</Link>
           </button>
         </div>
       </div>
