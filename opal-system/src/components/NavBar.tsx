@@ -19,7 +19,7 @@ const NavBar = () => {
           href="/"
           className="text-white text-3xl md:text-5xl font-extrabold tracking-wider"
         >
-          <span className="text-[#B99595]">CeylonX</span> Hotels
+          <span className="text-[#D1A7A7]">CeylonX</span> Hotels
         </Link>
 
         {/* Hamburger Menu Icon */}
@@ -44,18 +44,18 @@ const NavBar = () => {
               <Link href="/hotels">Hotels</Link>
             </li>
             <li className="hover:-translate-y-2 duration-500 transition-all text-white">
-              <Link href="/Details">About Us</Link>
+              <Link href="/AboutUs">About Us</Link>
             </li>
             <li className="hover:-translate-y-2 duration-500 transition-all text-white">
-              <Link href="/">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </li>
             <li className="lg:ml-4">
-              <button className="bg-white text-[#836666] rounded h-12 px-6 transition duration-300 ease-in-out hover:bg-gray-200">
+              <button className="bg-white text-[#836666] rounded h-12 px-6 transition duration-300 ease-in-out hover:bg-gray-300">
                 <Link href="/LogIn">Log In</Link>
               </button>
             </li>
             <li className="lg:ml-4">
-              <button className="bg-white text-[#836666] rounded h-12 px-6 transition duration-300 ease-in-out hover:bg-gray-200">
+              <button className="bg-white text-[#836666] rounded h-12 px-6 transition duration-300 ease-in-out hover:bg-gray-300">
                 <Link href="/SignUp">Sign Up</Link>
               </button>
             </li>

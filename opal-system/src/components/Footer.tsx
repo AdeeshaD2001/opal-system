@@ -33,22 +33,22 @@ const Footer = () => {
 
           {/* Middle Section: About Us */}
           <div className="flex flex-col md:w-1/3 space-y-4 text-center md:text-left">
-            <Link href='/Details'>
+            <Link href='/AboutUs'>
               <h4 className="font-semibold text-2xl cursor-pointer hover:underline">About Us</h4>
               </Link>
               
             <div className="flex flex-col gap-2">
               <p className="cursor-pointer hover:underline">
-                <Link href="/Details#our-story">Our Story</Link>
+                <Link href="/AboutUs#our-story">Our Story</Link>
               </p>
               <p className="cursor-pointer hover:underline">
-                <Link href="/Details#mission-vission">Mission & Vision</Link>
+                <Link href="/AboutUs#mission-vission">Mission & Vision</Link>
               </p>
               <p className="cursor-pointer hover:underline">
-                <Link href="/Details#terms-of-services">Terms of Service</Link>
+                <Link href="/AboutUs#terms-of-services">Terms of Service</Link>
               </p>
               <p className="cursor-pointer hover:underline">
-                <Link href="/Details#privacy-policy">Privacy Policy</Link>
+                <Link href="/AboutUs#privacy-policy">Privacy Policy</Link>
               </p>
               <p className="cursor-pointer hover:underline">
                 <Link href="/Details#cookie-policy">Cookie Policy</Link>
