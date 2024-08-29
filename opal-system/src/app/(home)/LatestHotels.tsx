@@ -23,7 +23,7 @@ const hotelData: Hotel[] = [
     price: 250,
     rating: 4,
     reviews: 320,
-    image: "https://placehold.co/600x400",
+    image: "/img/OceanView.jpg",
     deals: ["No prepayment needed"],
   },
   {
@@ -33,7 +33,7 @@ const hotelData: Hotel[] = [
     price: 120,
     rating: 4,
     reviews: 680,
-    image: "https://placehold.co/600x400",
+    image: "/img/city hotel.jpg",
     deals: ["Special Offer"],
   },
   {
@@ -43,7 +43,7 @@ const hotelData: Hotel[] = [
     price: 180,
     rating: 5,
     reviews: 890,
-    image: "https://placehold.co/600x400",
+    image: "/img/mountain.jpg",
     deals: ["Fully refundable"],
   },
   {
@@ -53,7 +53,7 @@ const hotelData: Hotel[] = [
     price: 300,
     rating: 5,
     reviews: 150,
-    image: "https://placehold.co/600x400",
+    image: "/img/dessert.jpg",
     deals: ["All-inclusive"],
   },
   {
@@ -63,7 +63,7 @@ const hotelData: Hotel[] = [
     price: 200,
     rating: 4,
     reviews: 260,
-    image: "https://placehold.co/600x400",
+    image: "/img/forest.jpg",
     deals: ["Breakfast included"],
   },
 ];

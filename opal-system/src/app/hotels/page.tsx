@@ -29,7 +29,7 @@ const hotelData: Hotel[] = [
     description: "Beachfront property with stunning views.",
     rating: 4,
     reviews: 320,
-    image: "https://placehold.co/400x200",
+    image: "/img/OceanView.jpg",
     deals: ["No prepayment needed"],
     rooms: [
       {
@@ -56,7 +56,7 @@ const hotelData: Hotel[] = [
     description: "Central location with modern amenities.",
     rating: 4,
     reviews: 680,
-    image: "https://placehold.co/400x200",
+    image: "/img/city hotel.jpg",
     deals: ["Special Offer"],
     rooms: [
       {
@@ -83,7 +83,7 @@ const hotelData: Hotel[] = [
     description: "Cozy retreat in the heart of the mountains.",
     rating: 5,
     reviews: 890,
-    image: "https://placehold.co/400x200",
+    image: "/img/mountain.jpg",
     deals: ["Fully refundable"],
     rooms: [
       {
