@@ -128,12 +128,14 @@ const StepFour = ({
           </label>
         </div>
 
-        <button
-          onClick={onConfirm}
-          className="bg-green-500 text-white py-2 px-4 rounded mt-6"
-        >
-          Confirm
-        </button>
+        <div className="flex justify-end mt-6">
+          <button
+            onClick={onConfirm}
+            className="bg-green-500 text-white py-2 px-4 rounded"
+          >
+            Confirm
+          </button>
+        </div>
       </div>
     </div>
   );
