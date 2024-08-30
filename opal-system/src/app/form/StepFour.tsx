@@ -177,13 +177,6 @@ const StepFour = ({ onConfirm }: { onConfirm: () => void }) => {
           completing this booking you agree to the booking conditions, general
           terms, and privacy policy.
         </p>
-        <button
-          type="button"
-          className="text-blue-500 underline mt-2"
-          onClick={() => alert("Open booking conditions dialog")}
-        >
-          - opens a dialog box
-        </button>
       </div>
 
       {/* Submit Button */}

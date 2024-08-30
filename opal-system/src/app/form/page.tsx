@@ -10,15 +10,43 @@ const FormPage = () => {
   const [hotel, setHotel] = useState("");
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
-  const [meal, setMeal] = useState("");
+
+  const [mealDetails, setMealDetails] = useState({
+    breakfast: false,
+    lunch: false,
+    dinner: false,
+    dietaryRestrictions: "",
+  });
 
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
 
-  const handleConfirm = () => {
-    // Handle confirmation logic here
-    alert("Form submitted!");
-    // Reset form or redirect as needed
+  const handleConfirm = async () => {
+    const payload = {
+      hotel,
+      userName,
+      email,
+      mealDetails,
+    };
+
+    try {
+      const response = await fetch("/api/submit-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        alert("Form submitted successfully!");
+      } else {
+        alert("Failed to submit the form.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred while submitting the form.");
+    }
   };
 
   const steps = [
@@ -69,7 +97,9 @@ const FormPage = () => {
           setEmail={setEmail}
         />
       )}
-      {step === 3 && <StepThree meal={meal} setMeal={setMeal} />}
+      {step === 3 && (
+        <StepThree mealDetails={mealDetails} setMealDetails={setMealDetails} />
+      )}
       {step === 4 && <StepFour onConfirm={handleConfirm} />}
 
       <div className="flex justify-between mt-4">
