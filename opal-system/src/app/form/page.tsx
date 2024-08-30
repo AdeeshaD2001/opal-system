@@ -21,12 +21,13 @@ const FormPage = () => {
   const [mealDetails, setMealDetails] = useState({
     date: "",
     meals: {
-      breakfast: [{ item: "", count: 1 }],
-      lunch: [{ item: "", count: 1 }],
-      dinner: [{ item: "", count: 1 }],
+      breakfast: [],
+      lunch: [],
+      dinner: [],
     },
     dietaryRestrictions: "",
   });
+  // { item: "", count: 1 }
 
   const [cardholderName, setCardholderName] = useState("");
   const [cardType, setCardType] = useState("");
@@ -63,7 +64,10 @@ const FormPage = () => {
         tailorOffersConsent,
       },
     };
-    console.log("Submitting form with the following data:", JSON.stringify(payload, null, 2));
+    console.log(
+      "Submitting form with the following data:",
+      JSON.stringify(payload, null, 2)
+    );
     try {
       const response = await fetch("/api/submit-form", {
         method: "POST",
