@@ -19,7 +19,7 @@ const CookiePolicy: React.FC = () => {
           <div className="mb-10">
             <div className="flex items-center mb-4">
               <FaCookieBite className="text-[#6b4f4f] text-2xl mr-3" />
-              <h2 className="text-2xl font-bold text-gray-800">1. What Are Cookies?</h2>
+              <h2 className="text-2xl font-bold text-gray-800">What Are Cookies?</h2>
             </div>
             <p className="text-s text-gray-700 mb-8 text-justify leading-relaxed">
               Cookies are small text files that are stored on your device when you visit a website. They help websites remember your preferences, login information, and other details to improve your browsing experience. Cookies can be either session cookies (which are deleted when you close your browser) or persistent cookies (which remain on your device for a set period).
@@ -30,7 +30,7 @@ const CookiePolicy: React.FC = () => {
           <div className="mb-10">
             <div className="flex items-center mb-4">
               <FaInfoCircle className="text-[#6b4f4f] text-2xl mr-3" />
-              <h2 className="text-2xl font-bold text-gray-800">2. How We Use Cookies</h2>
+              <h2 className="text-2xl font-bold text-gray-800">How We Use Cookies</h2>
             </div>
             <p className="text-s text-gray-700 mb-8 text-justify leading-relaxed">
               We use cookies for various purposes, including:
@@ -50,7 +50,7 @@ const CookiePolicy: React.FC = () => {
           <div className="mb-10">
             <div className="flex items-center mb-4">
               <FaGlobe className="text-[#6b4f4f] text-2xl mr-3" />
-              <h2 className="text-2xl font-bold text-gray-800">3. Third-Party Cookies</h2>
+              <h2 className="text-2xl font-bold text-gray-800">Third-Party Cookies</h2>
             </div>
             <p className="text-s text-gray-700 mb-8 text-justify leading-relaxed">
               We may also use third-party cookies from trusted partners to help us analyze website performance and deliver targeted advertising. These cookies are governed by the privacy policies of the respective third-party services and not by this policy.
@@ -61,7 +61,7 @@ const CookiePolicy: React.FC = () => {
           <div className="mb-10">
             <div className="flex items-center mb-4">
               <FaLock className="text-[#6b4f4f] text-2xl mr-3" />
-              <h2 className="text-2xl font-bold text-gray-800">4. Managing Cookies</h2>
+              <h2 className="text-2xl font-bold text-gray-800">Managing Cookies</h2>
             </div>
             <p className="text-s text-gray-700 mb-8 text-justify leading-relaxed">
               You can manage your cookie preferences through your browser settings. Most browsers allow you to block or delete cookies, but this may affect your ability to use certain features of our website. For more information on how to manage cookies, please refer to your browser's help documentation.
@@ -72,7 +72,7 @@ const CookiePolicy: React.FC = () => {
           <div className="mb-10">
             <div className="flex items-center mb-4">
               <FaSyncAlt className="text-[#6b4f4f] text-2xl mr-3" />
-              <h2 className="text-2xl font-bold text-gray-800">5. Changes to This Cookie Policy</h2>
+              <h2 className="text-2xl font-bold text-gray-800">Changes to This Cookie Policy</h2>
             </div>
             <p className="text-s text-gray-700 mb-8 text-justify leading-relaxed">
               We may update this Cookie Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any significant changes by posting the updated policy on our website. Your continued use of our website after such changes constitutes your acceptance of the revised policy.
@@ -83,7 +83,7 @@ const CookiePolicy: React.FC = () => {
           <div className="mb-10">
             <div className="flex items-center mb-4">
               <FaEnvelope className="text-[#6b4f4f] text-2xl mr-3" />
-              <h2 className="text-2xl font-bold text-gray-800">6. Contact Us</h2>
+              <h2 className="text-2xl font-bold text-gray-800">Contact Us</h2>
             </div>
             <p className="text- text-gray-700 text-justify leading-relaxed">
               If you have any questions or concerns about this Cookie Policy or our use of cookies, please contact us at{' '}
