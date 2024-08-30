@@ -135,21 +135,28 @@ const RoomOptionsSection: React.FC = () => (
     <h3 className="text-md font-semibold mb-4">Filter by:</h3>
     <table className="w-full">
       <tbody>
-        <RoomOptionRow
-          roomType="Deluxe Double Room"
-          description="Only 1 room left on our site"
-          price="LKR 50,912"
-          discount="20% off"
-          includes="Good breakfast included"
-        />
-        <RoomOptionRow
-          roomType="Superior Double Room"
-          description="Only 2 rooms left on our site"
-          price="LKR 53,591"
-          discount="20% off"
-          includes="Parking + High-speed internet"
-        />
-        {/* Add more RoomOptionRow as needed */}
+        <tr>
+          <RoomOptionRow
+            roomType="Deluxe Double Room"
+            description="Only 1 room left on our site"
+            price="LKR 50,912"
+            discount="20% off"
+            includes="Good breakfast included"
+          />
+          <RoomOptionRow
+            roomType="Superior Double Room"
+            description="Only 2 rooms left on our site"
+            price="LKR 53,591"
+            discount="20% off"
+            includes="Parking + High-speed internet"
+          />
+          {/* Add more RoomOptionRow as needed */}
+          <td className="border-b-2 border-zinc-300 py-4 text-right">
+            <button className="bg-green-500 text-white px-4 py-2 rounded-lg">
+              I’LL RESERVE
+            </button>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -163,7 +170,7 @@ const RoomOptionRow: React.FC<{
   includes: string;
 }> = ({ roomType, description, price, discount, includes }) => (
   <tr>
-    <td className="border-b-2 border-zinc-300 py-4">
+    <td className="border-b-2 border-zinc-300 py-4 w-1/6">
       <RoomOption
         roomType={roomType}
         description={description}
@@ -171,11 +178,6 @@ const RoomOptionRow: React.FC<{
         discount={discount}
         includes={includes}
       />
-    </td>
-    <td className="border-b-2 border-zinc-300 py-4 text-right">
-      <button className="bg-green-500 text-white px-4 py-2 rounded-lg">
-        I’LL RESERVE
-      </button>
     </td>
   </tr>
 );
