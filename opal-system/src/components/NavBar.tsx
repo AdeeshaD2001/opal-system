@@ -20,7 +20,10 @@ const NavBar = () => {
   // Close dropdown if clicked outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsDropdownOpen(false);
       }
     };
@@ -37,16 +40,19 @@ const NavBar = () => {
   }, [isDropdownOpen]);
 
   return (
-    <header className="bg-[#6b4f4f] shadow-md py-6 px-6 lg:px-8 relative z-40"> {/* Ensure header has high z-index */}
-      <div className="container mx-auto flex items-center justify-between relative"> {/* Ensure this container is also relative */}
+    <header className="bg-[#6b4f4f] shadow-md py-6 px-6 lg:px-8 relative z-40">
+      {" "}
+      {/* Ensure header has high z-index */}
+      <div className="container mx-auto flex items-center justify-between relative">
+        {" "}
+        {/* Ensure this container is also relative */}
         {/* Logo */}
         <Link
           href="/"
           className="text-white text-3xl md:text-5xl font-extrabold tracking-wider"
         >
-          <span className="text-[#D1A7A7]">CeylonX</span> Hotels
+          <span className="text-[#D1A7A7]">Opal</span> Hotels
         </Link>
-
         {/* Hamburger Menu Icon */}
         <button
           className="text-3xl text-white lg:hidden focus:outline-none rounded absolute top-4 right-4 z-50"
@@ -54,7 +60,6 @@ const NavBar = () => {
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
-
         {/* Navigation Links */}
         <nav
           className={`lg:flex lg:items-center lg:space-x-8 ${
@@ -71,7 +76,10 @@ const NavBar = () => {
             </li>
 
             <li className="relative hover:-translate-y-2 duration-500 transition-all text-white">
-              <button onClick={toggleDropdown} className="flex items-center space-x-2">
+              <button
+                onClick={toggleDropdown}
+                className="flex items-center space-x-2"
+              >
                 <span>About Us</span>
               </button>
               {isDropdownOpen && (
@@ -80,27 +88,39 @@ const NavBar = () => {
                   className="absolute left-0 mt-2 w-48 bg-white text-[#836666] rounded-lg shadow-lg z-50"
                 >
                   <li className="hover:bg-gray-100">
-                    <Link href="/ourStory" className="block px-4 py-2">Our Story</Link>
+                    <Link href="/ourStory" className="block px-4 py-2">
+                      Our Story
+                    </Link>
                   </li>
                   <li className="hover:bg-gray-100">
-                    <Link href="/mission&vision" className="block px-4 py-2">Mission & Vision</Link>
+                    <Link href="/mission&vision" className="block px-4 py-2">
+                      Mission & Vision
+                    </Link>
                   </li>
                   <li className="hover:bg-gray-100">
-                    <Link href="/termsOfService" className="block px-4 py-2">Terms of Service</Link>
+                    <Link href="/termsOfService" className="block px-4 py-2">
+                      Terms of Service
+                    </Link>
                   </li>
                   <li className="hover:bg-gray-100">
-                    <Link href="/privacyPolicy" className="block px-4 py-2">Privacy Policy</Link>
+                    <Link href="/privacyPolicy" className="block px-4 py-2">
+                      Privacy Policy
+                    </Link>
                   </li>
                   <li className="hover:bg-gray-100">
-                    <Link href="/cookiePolicy" className="block px-4 py-2">Cookie Policy</Link>
+                    <Link href="/cookiePolicy" className="block px-4 py-2">
+                      Cookie Policy
+                    </Link>
                   </li>
                   <li className="hover:bg-gray-100">
-                    <Link href="/faq" className="block px-4 py-2">FAQs</Link>
+                    <Link href="/faq" className="block px-4 py-2">
+                      FAQs
+                    </Link>
                   </li>
                 </ul>
               )}
             </li>
-            
+
             <li className="hover:-translate-y-2 duration-500 transition-all text-white">
               <Link href="/contact">Contact</Link>
             </li>
