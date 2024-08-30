@@ -12,7 +12,7 @@ const CookiePolicy: React.FC = () => {
 
           {/* Introduction Paragraph */}
           <p className="text-s text-gray-700 mb-8 text-justify leading-relaxed">
-            At CeylonX Hotels, we use cookies to enhance your experience on our website. This Cookie Policy explains what cookies are, how we use them, and how you can manage your cookie preferences.
+            At Opal Hotels, we use cookies to enhance your experience on our website. This Cookie Policy explains what cookies are, how we use them, and how you can manage your cookie preferences.
           </p>
 
           {/* What Are Cookies Section */}
@@ -88,10 +88,10 @@ const CookiePolicy: React.FC = () => {
             <p className="text- text-gray-700 text-justify leading-relaxed">
               If you have any questions or concerns about this Cookie Policy or our use of cookies, please contact us at{' '}
               <a 
-                href="mailto:ceylonxhotels@gmail.com" 
+                href="mailto:opalhotels@gmail.com" 
                 className="text-blue-500 hover:underline cursor-pointer"
               >
-                ceylonxhotels@gmail.com
+                opalhotels@gmail.com
               </a>. We value your feedback and are committed to addressing any issues you may have.
             </p>
           </div>

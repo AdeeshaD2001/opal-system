@@ -12,7 +12,7 @@ const PrivacyPolicy: React.FC = () => {
 
           {/* Introduction Paragraph */}
           <p className="text-s text-gray-700 mb-8 text-justify leading-relaxed">
-            Welcome to CeylonX Hotels. We are committed to protecting your privacy and ensuring a secure online experience. This Privacy Policy outlines how we collect, use, and safeguard your information when you use our services.
+            Welcome to Opal Hotels. We are committed to protecting your privacy and ensuring a secure online experience. This Privacy Policy outlines how we collect, use, and safeguard your information when you use our services.
           </p>
 
           {/* Information We Collect Section */}
@@ -90,10 +90,10 @@ const PrivacyPolicy: React.FC = () => {
             <p className="text-s text-gray-700 text-justify leading-relaxed">
               If you have any questions or concerns about this Privacy Policy or our practices, please contact us at{' '}
               <a 
-                href="mailto:ceylonxhotels@gmail.com" 
+                href="mailto:opalhotels@gmail.com" 
                 className="text-blue-500 hover:underline cursor-pointer"
               >
-                ceylonxhotels@gmail.com
+                opalhotels@gmail.com
               </a>. We value your feedback and are committed to addressing any issues you may have.
             </p>
           </div>

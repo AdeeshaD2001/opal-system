@@ -8,7 +8,7 @@ const OurStory: React.FC = () => {
       <header className="relative h-96 overflow-hidden">
         <Image
           src="/img/OceanView.jpg" // Path to the header background image
-          alt="CeylonX Hotels Journey"
+          alt="Opal Hotels Journey"
           layout="fill"
           objectFit="cover"
           objectPosition="center"
@@ -20,7 +20,7 @@ const OurStory: React.FC = () => {
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white animate-fade-in">
           <h1 className="text-5xl font-bold mb-4 drop-shadow-lg">Our Story</h1>
           <p className="text-lg max-w-2xl text-center drop-shadow-md">
-            Discover the journey of CeylonX Hotels and our commitment to redefining luxury and hospitality in Sri Lanka.
+            Discover the journey of Opal Hotels and our commitment to redefining luxury and hospitality in Sri Lanka.
           </p>
         </div>
       </header>
@@ -41,7 +41,7 @@ const OurStory: React.FC = () => {
             <div className="md:w-1/2 text-justify px-4 md:px-0">
               <h2 className="text-3xl font-semibold text-[#836666] mb-4">The Beginning of Our Journey</h2>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                At CeylonX Hotels, our journey began with a vision to redefine luxury and hospitality in Sri Lanka. Established over two decades ago, we embarked on a mission to create a chain of hotels that offer unparalleled comfort and a genuine sense of Sri Lankan warmth. Our founder, inspired by the island's rich heritage and stunning landscapes, envisioned a brand that combines elegance with local charm.
+                At Opal Hotels, our journey began with a vision to redefine luxury and hospitality in Sri Lanka. Established over two decades ago, we embarked on a mission to create a chain of hotels that offer unparalleled comfort and a genuine sense of Sri Lankan warmth. Our founder, inspired by the island's rich heritage and stunning landscapes, envisioned a brand that combines elegance with local charm.
               </p>
             </div>
           </div>
@@ -61,7 +61,7 @@ const OurStory: React.FC = () => {
             </div>
             <div className="md:w-1/2 md:pl-8 transform transition-transform duration-500 hover:scale-105">
               <Image
-                src="/img/story2.jpg" // Image path for this section
+                src="/img/mountain.jpg" // Image path for this section
                 alt="Expansion Across the Island"
                 width={800}
                 height={450}
@@ -79,7 +79,7 @@ const OurStory: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center mb-12">
             <div className="md:w-1/2 mb-4 md:mb-0 md:pr-8 transform transition-transform duration-500 hover:scale-105">
               <Image
-                src="/img/hotel.jpg" // Image path for this section
+                src="/img/forest.jpg" // Image path for this section
                 alt="Sustainability and Community"
                 width={800}
                 height={450}
@@ -104,12 +104,12 @@ const OurStory: React.FC = () => {
             <div className="md:w-1/2 order-last md:order-first mb-4 md:mb-0 md:pr-8">
               <h2 className="text-3xl font-semibold text-[#836666] mb-4">Looking to the Future</h2>
               <p className="text-lg text-gray-700 mb-6 text-justify leading-relaxed">
-                As we look to the future, we remain committed to innovation and excellence. Our goal is to continue expanding our portfolio while upholding the values that have guided us from the beginning. We invite you to join us on this journey and experience the exceptional hospitality that defines CeylonX Hotels.
+                As we look to the future, we remain committed to innovation and excellence. Our goal is to continue expanding our portfolio while upholding the values that have guided us from the beginning. We invite you to join us on this journey and experience the exceptional hospitality that defines Opal Hotels.
               </p>
             </div>
             <div className="md:w-1/2 md:pl-8 transform transition-transform duration-500 hover:scale-105">
               <Image
-                src="/img/hotel2.jpeg" // Image path for this section
+                src="/img/city hotel.jpg" // Image path for this section
                 alt="Looking to the Future"
                 width={800}
                 height={450}

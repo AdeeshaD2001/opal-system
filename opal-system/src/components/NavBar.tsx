@@ -51,7 +51,7 @@ const NavBar = () => {
           href="/"
           className="text-white text-3xl md:text-5xl font-extrabold tracking-wider"
         >
-          <span className="text-[#D1A7A7]">Opal</span> Hotels
+          <span className="text-[#D1A7A7]">OPAL</span> Hotels
         </Link>
         {/* Hamburger Menu Icon */}
         <button

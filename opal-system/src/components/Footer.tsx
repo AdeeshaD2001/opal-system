@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="flex flex-col gap-2">
               <div className="flex items-center">
                 <BsFillSendFill className="text-xl" />
-                <p className="ml-2 cursor-pointer hover:underline">ceylonxhotels@gmail.com</p>
+                <p className="ml-2 cursor-pointer hover:underline">opalhotels@gmail.com</p>
               </div>
               <div className="flex items-center">
                 <BsTelephoneOutbound className="text-xl" />
@@ -22,11 +22,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <FaFacebook className="text-xl" />
-                <p className="ml-2 cursor-pointer hover:underline">CeylonX Hotels</p>
+                <p className="ml-2 cursor-pointer hover:underline">Opal Hotels</p>
               </div>
               <div className="flex items-center">
                 <FaInstagram className="text-xl" />
-                <p className="ml-2 cursor-pointer hover:underline">ceylonxhotels</p>
+                <p className="ml-2 cursor-pointer hover:underline">opalhotels</p>
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@ const Footer = () => {
       </div>
       <div className='py-8'>
         <div className="max-w-7xl mx-auto px-4 text-center">
-                <p>&copy; {new Date().getFullYear()} CeylonX Hotels. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear()} Opal Hotels. All rights reserved.</p>
         </div>
       </div>
 

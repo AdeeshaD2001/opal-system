@@ -12,7 +12,7 @@ const TermsOfService: React.FC = () => {
           
           {/* Introduction Paragraph */}
           <p className="text-s text-gray-700 mb-8 text-justify leading-relaxed">
-            Welcome to CeylonX Hotels. By accessing or using our services, you agree to comply with and be bound by the following terms and conditions. These Terms of Service outline the rules and regulations for the use of our hotel system. Please read them carefully before using our services.
+            Welcome to Opal Hotels. By accessing or using our services, you agree to comply with and be bound by the following terms and conditions. These Terms of Service outline the rules and regulations for the use of our hotel system. Please read them carefully before using our services.
           </p>
           
           {/* Service Description */}
@@ -38,7 +38,7 @@ const TermsOfService: React.FC = () => {
               <h2 className="text-2xl font-bold text-gray-800">Limitation of Liability</h2>
             </div>
             <p className="text-s text-gray-700 mb-8 text-justify leading-relaxed">
-              CeylonX Hotels shall not be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in connection with your use of our services. This includes but is not limited to loss of data, loss of profits, or other damages that may result from errors or omissions in the information provided.
+              Opal Hotels shall not be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in connection with your use of our services. This includes but is not limited to loss of data, loss of profits, or other damages that may result from errors or omissions in the information provided.
             </p>
           </div>
 
@@ -49,7 +49,7 @@ const TermsOfService: React.FC = () => {
               <h2 className="text-2xl font-bold text-gray-800">Intellectual Property</h2>
             </div>
             <p className="text-s text-gray-700 mb-8 text-justify leading-relaxed">
-              All content and materials on our platform, including text, graphics, logos, and software, are the property of CeylonX Hotels or its licensors and are protected by intellectual property laws. You may not reproduce, distribute, or create derivative works from any content on our platform without our express written permission.
+              All content and materials on our platform, including text, graphics, logos, and software, are the property of Opal Hotels or its licensors and are protected by intellectual property laws. You may not reproduce, distribute, or create derivative works from any content on our platform without our express written permission.
             </p>
           </div>
 
@@ -68,10 +68,10 @@ const TermsOfService: React.FC = () => {
           <p className="text-s text-gray-700 text-justify leading-relaxed">
             If you have any questions or concerns regarding these Terms of Service, please contact us at{' '}
             <a 
-              href="mailto:ceylonxhotels@gmail.com" 
+              href="mailto:opalhotels@gmail.com" 
               className="text-blue-500 hover:underline cursor-pointer"
             >
-              ceylonxhotels@gmail.com
+              opalhotels@gmail.com
             </a>. Your feedback is important to us, and we are committed to ensuring a positive experience with our system.
           </p>
         </section>
