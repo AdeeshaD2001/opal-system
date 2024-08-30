@@ -34,7 +34,6 @@ const Main: React.FC = () => {
 
   return (
     <main className="flex-grow relative p-4">
-      <button className="absolute top-5 left-5 text-black">← Back</button>
       <div className="flex flex-col lg:flex-row mt-10">
         <div className="flex flex-col lg:w-1/2 lg:mr-5">
           <h1 className="text-center text-3xl font-bold mb-4">
