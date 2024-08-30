@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
@@ -7,16 +8,34 @@ import StepFour from "./StepFour";
 
 const FormPage = () => {
   const [step, setStep] = useState(1);
-  const [hotel, setHotel] = useState("Sample Hotel"); // Mocked hotel data
-  const [userName, setUserName] = useState("");
+  const [hotel, setHotel] = useState("Sample Hotel");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [country, setCountry] = useState("Sri Lanka");
+  const [telephone, setTelephone] = useState("");
+  const [bookingFor, setBookingFor] = useState("main-guest");
+  const [travelingForWork, setTravelingForWork] = useState("no");
+  const [confirmation, setConfirmation] = useState(false);
 
   const [mealDetails, setMealDetails] = useState({
-    breakfast: false,
-    lunch: false,
-    dinner: false,
+    date: "",
+    meals: {
+      breakfast: [{ item: "", count: 1 }],
+      lunch: [{ item: "", count: 1 }],
+      dinner: [{ item: "", count: 1 }],
+    },
     dietaryRestrictions: "",
   });
+
+  const [cardholderName, setCardholderName] = useState("");
+  const [cardType, setCardType] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
+  const [expiryDate, setExpiryDate] = useState("");
+  const [cvcCode, setCvcCode] = useState("");
+  const [saveDetails, setSaveDetails] = useState(false);
+  const [marketingConsent, setMarketingConsent] = useState(false);
+  const [tailorOffersConsent, setTailorOffersConsent] = useState(false);
 
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
@@ -24,11 +43,27 @@ const FormPage = () => {
   const handleConfirm = async () => {
     const payload = {
       hotel,
-      userName,
+      firstName,
+      lastName,
       email,
+      country,
+      telephone,
+      bookingFor,
+      travelingForWork,
+      confirmation,
       mealDetails,
+      paymentDetails: {
+        cardholderName,
+        cardType,
+        cardNumber,
+        expiryDate,
+        cvcCode,
+        saveDetails,
+        marketingConsent,
+        tailorOffersConsent,
+      },
     };
-
+    console.log("Submitting form with the following data:", JSON.stringify(payload, null, 2));
     try {
       const response = await fetch("/api/submit-form", {
         method: "POST",
@@ -70,11 +105,7 @@ const FormPage = () => {
                   : "bg-gray-300 text-black"
               }`}
             >
-              {step > index ? (
-                <span>&#10003;</span> // Checkmark for completed steps
-              ) : (
-                <span>{index + 1}</span>
-              )}
+              {step > index ? <span>&#10003;</span> : <span>{index + 1}</span>}
             </div>
             <span className="text-sm mt-2">{label}</span>
           </div>
@@ -88,19 +119,51 @@ const FormPage = () => {
         ></div>
       </div>
 
-      {step === 1 && <StepOne hotel={hotel} />}
+      {step === 1 && <StepOne hotel={hotel} setHotel={setHotel} />}
       {step === 2 && (
         <StepTwo
-          userName={userName}
-          setUserName={setUserName}
+          firstName={firstName}
+          setFirstName={setFirstName}
+          lastName={lastName}
+          setLastName={setLastName}
           email={email}
           setEmail={setEmail}
+          country={country}
+          setCountry={setCountry}
+          telephone={telephone}
+          setTelephone={setTelephone}
+          bookingFor={bookingFor}
+          setBookingFor={setBookingFor}
+          travelingForWork={travelingForWork}
+          setTravelingForWork={setTravelingForWork}
+          confirmation={confirmation}
+          setConfirmation={setConfirmation}
         />
       )}
       {step === 3 && (
         <StepThree mealDetails={mealDetails} setMealDetails={setMealDetails} />
       )}
-      {step === 4 && <StepFour onConfirm={handleConfirm} />}
+      {step === 4 && (
+        <StepFour
+          onConfirm={handleConfirm}
+          cardholderName={cardholderName}
+          setCardholderName={setCardholderName}
+          cardType={cardType}
+          setCardType={setCardType}
+          cardNumber={cardNumber}
+          setCardNumber={setCardNumber}
+          expiryDate={expiryDate}
+          setExpiryDate={setExpiryDate}
+          cvcCode={cvcCode}
+          setCvcCode={setCvcCode}
+          saveDetails={saveDetails}
+          setSaveDetails={setSaveDetails}
+          marketingConsent={marketingConsent}
+          setMarketingConsent={setMarketingConsent}
+          tailorOffersConsent={tailorOffersConsent}
+          setTailorOffersConsent={setTailorOffersConsent}
+        />
+      )}
 
       <div className="flex justify-between mt-4">
         {step > 1 && (

@@ -1,166 +1,148 @@
 "use client";
 
+import React from "react";
+
 const StepTwo = ({
-  hotel,
-  setHotel,
-}: {
-  hotel: string;
-  setHotel: (value: string) => void;
+  firstName,
+  setFirstName,
+  lastName,
+  setLastName,
+  email,
+  setEmail,
+  country,
+  setCountry,
+  telephone,
+  setTelephone,
+  bookingFor,
+  setBookingFor,
+  travelingForWork,
+  setTravelingForWork,
+  confirmation,
+  setConfirmation,
 }) => {
   return (
-    <div className="p-6 max-w-lg mx-auto">
-      <h2 className="text-2xl font-bold mb-6">Enter Your Details</h2>
-      <p className="text-gray-700 mb-4">
-        Almost done! Just fill in the <span className="text-red-500">*</span>{" "}
-        required info.
-      </p>
-
-      <div className="mb-4">
-        <label
-          htmlFor="first-name"
-          className="block text-sm font-medium text-gray-700"
-        >
-          First name <span className="text-red-500">*</span>
+    <div>
+      <div className="p-4 border rounded-lg">
+        <h3 className="text-xl font-bold mb-2">Personal Details</h3>
+        <label className="block mt-4 mb-1 font-bold">
+          First Name <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
-          id="first-name"
-          placeholder="First Name"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
           className="border p-2 rounded w-full"
         />
-      </div>
 
-      <div className="mb-4">
-        <label
-          htmlFor="last-name"
-          className="block text-sm font-medium text-gray-700"
-        >
-          Last name <span className="text-red-500">*</span>
+        <label className="block mt-4 mb-1 font-bold">
+          Last Name <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
-          id="last-name"
-          placeholder="Last Name"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
           className="border p-2 rounded w-full"
         />
-      </div>
 
-      <div className="mb-4">
-        <label
-          htmlFor="email"
-          className="block text-sm font-medium text-gray-700"
-        >
-          Email address <span className="text-red-500">*</span>
+        <label className="block mt-4 mb-1 font-bold">
+          Email <span className="text-red-500">*</span>
         </label>
         <input
           type="email"
-          id="email"
-          placeholder="Email Address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className="border p-2 rounded w-full"
         />
-        <p className="text-gray-500 text-xs mt-1">
-          Watch out for typos. Confirmation email goes to this address.
-        </p>
-      </div>
 
-      <div className="mb-4">
-        <label
-          htmlFor="country"
-          className="block text-sm font-medium text-gray-700"
-        >
-          Country/region <span className="text-red-500">*</span>
-        </label>
-        <select id="country" className="border p-2 rounded w-full">
-          <option>Sri Lanka</option>
-          {/* Add more options as needed */}
-        </select>
-      </div>
-
-      <div className="mb-4">
-        <label
-          htmlFor="telephone"
-          className="block text-sm font-medium text-gray-700"
-        >
-          Telephone (mobile number preferred){" "}
-          <span className="text-red-500">*</span>
+        <label className="block mt-4 mb-1 font-bold">
+          Country <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
-          id="telephone"
-          placeholder="Sri Lanka +94"
+          value={country}
+          onChange={(e) => setCountry(e.target.value)}
           className="border p-2 rounded w-full"
         />
-        <p className="text-gray-500 text-xs mt-1">
-          So the accommodation can reach you.
-        </p>
-      </div>
 
-      <div className="mb-4 flex items-center space-x-4">
-        <input
-          type="checkbox"
-          id="confirmation"
-          className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-        />
-        <label htmlFor="confirmation" className="text-sm text-gray-700">
-          Yes, I'd like free paperless confirmation (recommended). We'll text
-          you a link to download our app.
+        <label className="block mt-4 mb-1 font-bold">
+          Telephone <span className="text-red-500">*</span>
         </label>
+        <input
+          type="tel"
+          value={telephone}
+          onChange={(e) => setTelephone(e.target.value)}
+          className="border p-2 rounded w-full"
+        />
+
+        <div className="mt-4">
+          <div className="flex items-center">
+            <input
+              type="radio"
+              id="main-guest"
+              checked={bookingFor === "main-guest"}
+              onChange={() => setBookingFor("main-guest")}
+              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+            />
+            <label htmlFor="main-guest" className="ml-2">
+              Booking for main guest
+            </label>
+          </div>
+          <div className="flex items-center mt-2">
+            <input
+              type="radio"
+              id="someone-else"
+              checked={bookingFor === "someone-else"}
+              onChange={() => setBookingFor("someone-else")}
+              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+            />
+            <label htmlFor="someone-else" className="ml-2">
+              Booking for someone else
+            </label>
+          </div>
+        </div>
+
+        <div className="mt-4">
+          <div className="flex items-center">
+            <input
+              type="radio"
+              id="no"
+              checked={travelingForWork === "no"}
+              onChange={() => setTravelingForWork("no")}
+              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+            />
+            <label htmlFor="no" className="ml-2">
+              No
+            </label>
+          </div>
+          <div className="flex items-center mt-2">
+            <input
+              type="radio"
+              id="yes"
+              checked={travelingForWork === "yes"}
+              onChange={() => setTravelingForWork("yes")}
+              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+            />
+            <label htmlFor="yes" className="ml-2">
+              Yes
+            </label>
+          </div>
+        </div>
+
+        <div className="mt-4 flex items-center">
+          <input
+            type="checkbox"
+            id="confirmation"
+            checked={confirmation}
+            onChange={(e) => setConfirmation(e.target.checked)}
+            className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+          />
+          <label htmlFor="confirmation" className="ml-2">
+            I confirm that all the information is correct
+          </label>
+        </div>
       </div>
-
-      <fieldset className="mb-4">
-        <legend className="text-sm font-medium text-gray-700">
-          Who are you booking for?
-        </legend>
-        <div className="flex flex-col mt-2 space-y-2">
-          <label className="flex items-center space-x-2">
-            <input
-              type="radio"
-              name="booking-for"
-              value="main-guest"
-              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-            />
-            <span className="text-sm text-gray-700">I am the main guest</span>
-          </label>
-          <label className="flex items-center space-x-2">
-            <input
-              type="radio"
-              name="booking-for"
-              value="someone-else"
-              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-            />
-            <span className="text-sm text-gray-700">
-              Booking is for someone else
-            </span>
-          </label>
-        </div>
-      </fieldset>
-
-      <fieldset className="mb-4">
-        <legend className="text-sm font-medium text-gray-700">
-          Are you traveling for work?
-        </legend>
-        <div className="flex flex-col mt-2 space-y-2">
-          <label className="flex items-center space-x-2">
-            <input
-              type="radio"
-              name="traveling-for-work"
-              value="yes"
-              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-            />
-            <span className="text-sm text-gray-700">Yes</span>
-          </label>
-          <label className="flex items-center space-x-2">
-            <input
-              type="radio"
-              name="traveling-for-work"
-              value="no"
-              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-            />
-            <span className="text-sm text-gray-700">No</span>
-          </label>
-        </div>
-      </fieldset>
     </div>
   );
 };
+
 export default StepTwo;
