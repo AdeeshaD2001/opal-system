@@ -132,10 +132,10 @@ const InputWithLabel: React.FC<{
 
 const RoomOptionsSection: React.FC = () => (
   <div className="mt-6">
-    <h3 className="text-md font-semibold mb-4">Filter by:</h3>
+    <h3 className="text-md font-semibold mb-4">Available Rooms</h3>
     <table className="w-full">
       <tbody>
-        <tr>
+        <td>
           <RoomOptionRow
             roomType="Deluxe Double Room"
             description="Only 1 room left on our site"
@@ -150,13 +150,13 @@ const RoomOptionsSection: React.FC = () => (
             discount="20% off"
             includes="Parking + High-speed internet"
           />
-          {/* Add more RoomOptionRow as needed */}
-          <td className="border-b-2 border-zinc-300 py-4 text-right">
-            <button className="bg-green-500 text-white px-4 py-2 rounded-lg">
-              I’LL RESERVE
-            </button>
-          </td>
-        </tr>
+        </td>
+        <td className="border-b-2 border-zinc-300 py-4 text-right w-1/6">
+          <button className="bg-green-500 text-white px-4 py-2 rounded-lg">
+            I’LL RESERVE
+          </button>
+        </td>
+        {/* Add more RoomOptionRow as needed */}
       </tbody>
     </table>
   </div>
