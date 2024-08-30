@@ -7,7 +7,7 @@ import StepFour from "./StepFour";
 
 const FormPage = () => {
   const [step, setStep] = useState(1);
-  const [hotel, setHotel] = useState("");
+  const [hotel, setHotel] = useState("Sample Hotel"); // Mocked hotel data
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
 
@@ -50,7 +50,7 @@ const FormPage = () => {
   };
 
   const steps = [
-    "Select Hotel",
+    "Hotel Details",
     "User Details",
     "Meal Details",
     "Confirm Details",
@@ -88,7 +88,7 @@ const FormPage = () => {
         ></div>
       </div>
 
-      {step === 1 && <StepOne hotel={hotel} setHotel={setHotel} />}
+      {step === 1 && <StepOne hotel={hotel} />}
       {step === 2 && (
         <StepTwo
           userName={userName}

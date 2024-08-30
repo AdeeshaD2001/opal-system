@@ -34,34 +34,11 @@ const StepFour = ({ onConfirm }: { onConfirm: () => void }) => {
             Save my details so I can book faster next time
           </label>
         </div>
-        <p className="mt-4 text-sm">
-          By signing in or creating an account, you agree with our{" "}
-          <a href="#" className="text-blue-500 underline">
-            Terms & conditions
-          </a>{" "}
-          and{" "}
-          <a href="#" className="text-blue-500 underline">
-            Privacy statement
-          </a>
-          .
-        </p>
       </div>
 
       {/* Payment Section */}
       <div className="mt-6 p-4 border rounded-lg">
         <h3 className="text-xl font-bold mb-2">How do you want to pay?</h3>
-        <button
-          type="button"
-          className="text-blue-500 underline mt-2"
-          onClick={() => alert("Open dialog for payment options")}
-        >
-          - opens a dialog box
-        </button>
-        <p className="mt-2">
-          <a href="#" className="text-blue-500 underline">
-            No card?
-          </a>
-        </p>
         <div className="mt-4">
           <label className="block mb-1 font-bold">
             Cardholder's name <span className="text-red-500">*</span>
@@ -71,7 +48,7 @@ const StepFour = ({ onConfirm }: { onConfirm: () => void }) => {
             value={cardholderName}
             onChange={(e) => setCardholderName(e.target.value)}
             className="border p-2 rounded w-full"
-            placeholder="Thotage Fernando"
+            placeholder="T Fernando"
           />
 
           <label className="block mt-4 mb-1 font-bold">
@@ -159,24 +136,6 @@ const StepFour = ({ onConfirm }: { onConfirm: () => void }) => {
             products and services.
           </label>
         </div>
-        <p className="mt-4 text-sm">
-          By signing up, you let us tailor offers and content to your interests
-          by monitoring how you use Booking.com through tracking technologies.
-          Unsubscribe at any time. Read our{" "}
-          <a href="#" className="text-blue-500 underline">
-            privacy policy
-          </a>
-          .
-        </p>
-      </div>
-
-      {/* Final Confirmation Section */}
-      <div className="mt-6">
-        <p className="text-sm">
-          Your booking is with O2 Villas Resort & Spa, Ella directly and by
-          completing this booking you agree to the booking conditions, general
-          terms, and privacy policy.
-        </p>
       </div>
 
       {/* Submit Button */}
@@ -187,11 +146,6 @@ const StepFour = ({ onConfirm }: { onConfirm: () => void }) => {
         >
           Complete booking
         </button>
-        <p className="mt-2 text-sm">
-          <a href="#" className="text-blue-500 underline">
-            What are my booking conditions?
-          </a>
-        </p>
       </div>
     </div>
   );
