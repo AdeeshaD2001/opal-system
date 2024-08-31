@@ -123,7 +123,7 @@ const FormPage = () => {
         ></div>
       </div>
 
-      {step === 1 && <StepOne hotel={hotel} setHotel={setHotel} />}
+      {step === 1 && <StepOne reservation={null} />}
       {step === 2 && (
         <StepTwo
           firstName={firstName}
