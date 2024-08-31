@@ -2,6 +2,7 @@
 import { lazy, Suspense, useState, useEffect } from "react";
 import axios from "axios";
 
+// Import the ChatBot component lazily
 const ChatBot = lazy(() => import("react-chatbotify"));
 
 const MyChatBot = () => {
@@ -17,6 +18,10 @@ const MyChatBot = () => {
     audio: { disabled: false, defaultToggledOn: true, tapToPlay: true },
     chatInput: { showCharacterCount: true, characterLimit: 10 },
     voice: { disabled: false },
+    header: {
+      title: "ChatBot", // Set the title here
+      // Try adding more options incrementally
+    },
   };
 
   const [form, setForm] = useState({});
@@ -40,7 +45,7 @@ const MyChatBot = () => {
     },
   };
 
-  return <ChatBot options={options} flow={flow} />;
+  return <ChatBot settings={options} flow={flow} />;
 };
 
 const ChatWidget = () => {

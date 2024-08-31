@@ -13,7 +13,6 @@ const Availability: React.FC = () => {
 
   return (
     <section className="mt-10">
-      <h2 className="text-lg font-semibold mb-4">Availability</h2>
       <div className="bg-white p-4 rounded-lg shadow-md">
         <DateAndGuestDetails
           checkInDate={checkInDate}
@@ -27,9 +26,7 @@ const Availability: React.FC = () => {
           rooms={rooms}
           setRooms={setRooms}
         />
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4">
-          View availability
-        </button>
+
         <RoomOptionsSection />
       </div>
     </section>
@@ -59,49 +56,54 @@ const DateAndGuestDetails: React.FC<{
   rooms,
   setRooms,
 }) => (
-  <div className="mb-6">
-    <table className="w-full">
-      <tbody>
-        <TableRow label="Check-in Date:">
-          <input
-            type="date"
-            value={checkInDate}
-            onChange={(e) => setCheckInDate(e.target.value)}
-            className="border border-gray-300 p-2 rounded-lg w-full"
-          />
-        </TableRow>
-        <TableRow label="Check-out Date:">
-          <input
-            type="date"
-            value={checkOutDate}
-            onChange={(e) => setCheckOutDate(e.target.value)}
-            className="border border-gray-300 p-2 rounded-lg w-full"
-          />
-        </TableRow>
-        <TableRow label="Guests:">
-          <div className="flex space-x-4">
-            <InputWithLabel
-              label="Adults"
-              value={adults}
-              setValue={setAdults}
-              min={0}
-            />
-            <InputWithLabel
-              label="Children"
-              value={children}
-              setValue={setChildren}
-              min={0}
-            />
-            <InputWithLabel
-              label="Rooms"
-              value={rooms}
-              setValue={setRooms}
-              min={1}
-            />
-          </div>
-        </TableRow>
-      </tbody>
-    </table>
+  <div className="mb-6 max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-lg border border-gray-200">
+    <h2 className="text-2xl font-bold mb-6 text-center text-primary border-b-2 border-primary pb-2">
+      Availability
+    </h2>
+    <div className="grid grid-cols-2 gap-6 mb-6">
+      <div>
+        <label className="block text-gray-700 mb-2 text-lg">
+          Check-in Date
+        </label>
+        <input
+          type="date"
+          value={checkInDate}
+          onChange={(e) => setCheckInDate(e.target.value)}
+          className="border border-gray-300 p-3 rounded-lg w-full"
+        />
+      </div>
+      <div>
+        <label className="block text-gray-700 mb-2 text-lg">
+          Check-out Date
+        </label>
+        <input
+          type="date"
+          value={checkOutDate}
+          onChange={(e) => setCheckOutDate(e.target.value)}
+          className="border border-gray-300 p-3 rounded-lg w-full"
+        />
+      </div>
+    </div>
+    <div className="grid grid-cols-3 gap-6 mb-6">
+      <InputWithLabel
+        label="Adults"
+        value={adults}
+        setValue={setAdults}
+        min={0}
+      />
+      <InputWithLabel
+        label="Children"
+        value={children}
+        setValue={setChildren}
+        min={0}
+      />
+      <InputWithLabel label="Rooms" value={rooms} setValue={setRooms} min={1} />
+    </div>
+    <div className="text-center">
+      <button className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-600 transition-colors">
+        View Availability
+      </button>
+    </div>
   </div>
 );
 
@@ -131,32 +133,35 @@ const InputWithLabel: React.FC<{
 );
 
 const RoomOptionsSection: React.FC = () => (
-  <div className="mt-6">
-    <h3 className="text-md font-semibold mb-4">Available Rooms</h3>
+  <div className="mt-6 max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+    <h3 className="text-lg font-semibold mb-4 text-center border-b-2 border-gray-200 pb-2">
+      Available Rooms
+    </h3>
     <table className="w-full">
       <tbody>
-        <td>
-          <RoomOptionRow
-            roomType="Deluxe Double Room"
-            description="Only 1 room left on our site"
-            price="LKR 50,912"
-            discount="20% off"
-            includes="Good breakfast included"
-          />
-          <RoomOptionRow
-            roomType="Superior Double Room"
-            description="Only 2 rooms left on our site"
-            price="LKR 53,591"
-            discount="20% off"
-            includes="Parking + High-speed internet"
-          />
-        </td>
-        <td className="border-b-2 border-zinc-300 py-4 text-right w-1/6">
-          <button className="bg-green-500 text-white px-4 py-2 rounded-lg">
-            I’LL RESERVE
-          </button>
-        </td>
-        {/* Add more RoomOptionRow as needed */}
+        <tr>
+          <td className="border-b-2 border-zinc-300 py-4 w-5/6">
+            <RoomOptionRow
+              roomType="Deluxe Double Room"
+              description="Only 1 room left on our site"
+              price="LKR 50,912"
+              discount="20% off"
+              includes="Good breakfast included"
+            />
+            <RoomOptionRow
+              roomType="Superior Double Room"
+              description="Only 2 rooms left on our site"
+              price="LKR 53,591"
+              discount="20% off"
+              includes="Parking + High-speed internet"
+            />
+          </td>
+          <td className="border-b-2 border-zinc-300 py-4 text-right w-1/6">
+            <button className="bg-green-500 text-white px-4 py-2 rounded-lg">
+              I’LL RESERVE
+            </button>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
