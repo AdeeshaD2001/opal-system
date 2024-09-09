@@ -16,7 +16,7 @@ pipeline {
         nodejs 'nodejs-22.7.0'
     }
     parameters {
-        string(name: 'NAME', defaultValue: 'Harshana Lakshara', description: 'Executor name')
+        string(name: 'NAME', defaultValue: 'AdeeshaD2001', description: 'Executor name')
     }
     stages {
         stage("Init") {

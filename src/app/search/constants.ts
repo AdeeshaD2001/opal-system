@@ -1,0 +1,85 @@
+import { Hotel } from "./types";
+
+export const hotels: Hotel[] = [
+  {
+    id: 1,
+    name: "Ocean View Resort",
+    description: "Beachfront property with stunning views.",
+    rating: 4,
+    reviews: 320,
+    image: "/img/OceanView.jpg",
+    deals: ["No prepayment needed"],
+    rooms: [
+      {
+        type: "Standard Room",
+        amenities: ["Sea view", "Free Wi-Fi", "King-size bed"],
+        availability: true,
+        price: 250,
+        adultCount: 2,
+        childCount: 0,
+      },
+      {
+        type: "Deluxe Room",
+        amenities: ["Ocean view", "Free Wi-Fi", "King-size bed", "Balcony"],
+        availability: false,
+        price: 350,
+        adultCount: 2,
+        childCount: 1,
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "City Lights Hotel",
+    description: "Central location with modern amenities.",
+    rating: 4,
+    reviews: 680,
+    image: "/img/city hotel.jpg",
+    deals: ["Special Offer"],
+    rooms: [
+      {
+        type: "Standard Room",
+        amenities: ["City view", "Free Wi-Fi", "Queen-size bed"],
+        availability: true,
+        price: 120,
+        adultCount: 1,
+        childCount: 0,
+      },
+      {
+        type: "Executive Suite",
+        amenities: ["City view", "Free Wi-Fi", "King-size bed", "Mini bar"],
+        availability: true,
+        price: 220,
+        adultCount: 2,
+        childCount: 2,
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Mountain Lodge",
+    description: "Cozy retreat in the heart of the mountains.",
+    rating: 5,
+    reviews: 890,
+    image: "/img/mountain.jpg",
+    deals: ["Fully refundable"],
+    rooms: [
+      {
+        type: "Cabin Room",
+        amenities: ["Mountain view", "Free Wi-Fi", "Fireplace"],
+        availability: true,
+        price: 180,
+        adultCount: 2,
+        childCount: 1,
+      },
+      {
+        type: "Suite",
+        amenities: ["Mountain view", "Free Wi-Fi", "Fireplace", "Jacuzzi"],
+        availability: true,
+        price: 280,
+        adultCount: 2,
+        childCount: 0,
+      },
+    ],
+  },
+];
