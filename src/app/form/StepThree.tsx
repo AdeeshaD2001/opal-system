@@ -67,8 +67,16 @@ const StepThree = ({
     field: "item" | "count",
     value: string | number
   ) => {
-    const updatedMeal = [...mealDetails.meals[mealType]];
-    updatedMeal[index][field] = value;
+    // Assert the type of updatedMeal to ensure TypeScript knows what fields it contains
+    const updatedMeal = [...mealDetails.meals[mealType]] as {
+      item: string;
+      count: number;
+    }[];
+
+    // Type assertion to safely assign the value
+    updatedMeal[index][field] = value as never;
+
+    // Update the specific meal state based on the meal type
     if (mealType === "breakfast") setBreakfast(updatedMeal);
     if (mealType === "lunch") setLunch(updatedMeal);
     if (mealType === "dinner") setDinner(updatedMeal);

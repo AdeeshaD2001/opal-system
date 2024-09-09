@@ -1,7 +1,30 @@
+// src/app/form/StepFour.tsx
 "use client";
+
 import React from "react";
 
-const StepFour = ({
+// Define an interface for the props
+interface StepFourProps {
+  onConfirm: () => void;
+  cardholderName: string;
+  setCardholderName: (value: string) => void;
+  cardType: string;
+  setCardType: (value: string) => void;
+  cardNumber: string;
+  setCardNumber: (value: string) => void;
+  expiryDate: string;
+  setExpiryDate: (value: string) => void;
+  cvcCode: string;
+  setCvcCode: (value: string) => void;
+  saveDetails: boolean;
+  setSaveDetails: (value: boolean) => void;
+  marketingConsent: boolean;
+  setMarketingConsent: (value: boolean) => void;
+  tailorOffersConsent: boolean;
+  setTailorOffersConsent: (value: boolean) => void;
+}
+
+const StepFour: React.FC<StepFourProps> = ({
   onConfirm,
   cardholderName,
   setCardholderName,

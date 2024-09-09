@@ -2,11 +2,25 @@
 
 import React, { useState } from "react";
 
-interface HotelFilterProps {
-  onFilterChange: (filters: any) => void;
-}
+export type HotelFilterProps = {
+  onFilterChange: (newFilters: any) => void;
+  filters: {
+    priceRange: number[];
+    refundable: boolean;
+    noPrepayment: boolean;
+    specialOffers: boolean;
+    fiveStar: boolean;
+    breakfastIncluded: boolean;
+    budget: boolean;
+    hotels: boolean;
+    bnb: boolean;
+  };
+};
 
-const HotelFilter: React.FC<HotelFilterProps> = ({ onFilterChange }) => {
+const HotelFilter: React.FC<HotelFilterProps> = ({
+  onFilterChange,
+  filters,
+}) => {
   const [filter, setFilter] = useState({
     refundable: false,
     noPrepayment: false,

@@ -6,21 +6,13 @@ import HotelList from "./HotelList";
 import DatePicker from "./DatePicker";
 import GuestCountInput from "./GuestCountInput";
 import { hotels as hotelData } from "./constants";
-
-type Hotel = {
-  name: string;
-  rating: number;
-  deals: string[];
-  rooms: {
-    price: number;
-  }[];
-};
+import { Hotel } from "./types";
 
 const HotelsPage: React.FC = () => {
   const [checkInDate, setCheckInDate] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
   const [guestCount, setGuestCount] = useState("1 room, 2 adults, 0 children");
-  const [filteredHotels, setFilteredHotels] = useState(hotelData);
+  const [filteredHotels, setFilteredHotels] = useState<Hotel[]>(hotelData);
   const [filters, setFilters] = useState({
     priceRange: [0, Infinity],
     refundable: false,

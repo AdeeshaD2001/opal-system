@@ -107,7 +107,10 @@ const DateAndGuestDetails: React.FC<{
   </div>
 );
 
-const TableRow: React.FC<{ label: string }> = ({ label, children }) => (
+const TableRow: React.FC<{ label: string; children: React.ReactNode }> = ({
+  label,
+  children,
+}) => (
   <tr>
     <td className="text-gray-700 font-semibold">{label}</td>
     <td>{children}</td>

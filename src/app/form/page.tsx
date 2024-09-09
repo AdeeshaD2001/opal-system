@@ -1,10 +1,28 @@
 "use client";
 
-import { useState } from "react";
+// Make sure to include Dispatch and SetStateAction in your imports
+import { useState, Dispatch, SetStateAction } from "react";
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
 import StepFour from "./StepFour";
+
+// Define the type for meals
+type MealItem = {
+  item: string;
+  count: number;
+};
+
+// Define the type for the meal details state
+type MealDetailsType = {
+  date: string;
+  meals: {
+    breakfast: MealItem[];
+    lunch: MealItem[];
+    dinner: MealItem[];
+  };
+  dietaryRestrictions: string;
+};
 
 const FormPage = () => {
   const [step, setStep] = useState(1);
@@ -145,7 +163,12 @@ const FormPage = () => {
         />
       )}
       {step === 3 && (
-        <StepThree mealDetails={mealDetails} setMealDetails={setMealDetails} />
+        <StepThree
+          mealDetails={mealDetails}
+          setMealDetails={
+            setMealDetails as Dispatch<SetStateAction<MealDetailsType>>
+          } // Explicit type cast
+        />
       )}
       {step === 4 && (
         <StepFour

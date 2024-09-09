@@ -2,7 +2,27 @@
 
 import React from "react";
 
-const StepTwo = ({
+// Define an interface for the component's props
+interface StepTwoProps {
+  firstName: string;
+  setFirstName: (value: string) => void;
+  lastName: string;
+  setLastName: (value: string) => void;
+  email: string;
+  setEmail: (value: string) => void;
+  country: string;
+  setCountry: (value: string) => void;
+  telephone: string;
+  setTelephone: (value: string) => void;
+  bookingFor: string;
+  setBookingFor: (value: string) => void;
+  travelingForWork: string;
+  setTravelingForWork: (value: string) => void;
+  confirmation: boolean;
+  setConfirmation: (value: boolean) => void;
+}
+
+const StepTwo: React.FC<StepTwoProps> = ({
   firstName,
   setFirstName,
   lastName,

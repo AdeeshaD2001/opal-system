@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
+// Define the type of props the ImageSlider component accepts
 interface ImageSliderProps {
   images: string[];
+  slidesToShow?: number; // Add this line to accept slidesToShow as an optional prop
 }
 
 const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
