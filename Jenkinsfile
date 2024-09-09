@@ -45,13 +45,8 @@ pipeline {
         stage("Version Increment") {
             steps {
                 script {
-                    // Check if gv and versionIncrement() are properly defined
-                    if (gv && gv.versionIncrement) {
-                        env.IMAGE_TAG = gv.versionIncrement()
-                        echo "Image tag is: ${env.IMAGE_TAG}"
-                    } else {
-                        error "versionIncrement() method not found in script.groovy"
-                    }
+                    env.IMAGE_TAG = gv.versionIncrement()
+                    echo "Image tag is: ${env.IMAGE_TAG}"
                 }
             }
         }
@@ -83,24 +78,14 @@ pipeline {
         stage("Deploy") {
             steps {
                 script {
-                    // Ensure the deploy method is available in the shared library
-                    if (gv && gv.deploy) {
-                        gv.deploy()
-                    } else {
-                        error "deploy() method not found in script.groovy"
-                    }
+                    gv.deploy()
                 }
             }
         }
         stage("Commit version update to Git") {
             steps {
                 script {
-                    // Ensure the commitVersionUpdate method is available in the shared library
-                    if (gv && gv.commitVersionUpdate) {
-                        gv.commitVersionUpdate()
-                    } else {
-                        error "commitVersionUpdate() method not found in script.groovy"
-                    }
+                    gv.commitVersionUpdate()
                 }
             }
         }
