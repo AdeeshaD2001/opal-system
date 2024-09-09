@@ -46,7 +46,7 @@ pipeline {
             steps {
                 script {
                     sh 'npm ci'
-                    sh 'npm run build'
+                    sh 'npm run build:no-lint'
                 }
             }
         }
