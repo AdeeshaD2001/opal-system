@@ -1,5 +1,6 @@
 #!/usr/bin/env groovy
 
+// Load the shared library from GitHub
 library identifier: "jenkins-shared-lib@main", retriever: modernSCM(
     [
         $class       : 'GitSCMSource',
@@ -16,7 +17,7 @@ pipeline {
         nodejs 'nodejs-22.7.0'
     }
     parameters {
-        string(name: 'NAME', defaultValue: 'AdeeshaD2001', description: 'Executor name')
+        string(name: 'NAME', defaultValue: 'Harshana Lakshara', description: 'Executor name')
     }
     stages {
         stage("Init") {
@@ -26,54 +27,80 @@ pipeline {
 
                     sh 'node --version'
                     sh 'npm --version'
+                    
                     if (!fileExists('package.json')) {
                         error "package.json not found"
                     }
                     echo "package.json contents: ${readFile('package.json')}"
-                    gv = load "script.groovy"
+                    
+                    // Ensure the script.groovy file is loaded correctly
+                    if (fileExists('script.groovy')) {
+                        gv = load "script.groovy"
+                    } else {
+                        error "script.groovy not found"
+                    }
                 }
             }
         }
         stage("Version Increment") {
             steps {
                 script {
-                    env.IMAGE_TAG = gv.versionIncrement()
-                    echo "Image tag is: ${env.IMAGE_TAG}"
+                    // Check if gv and versionIncrement() are properly defined
+                    if (gv && gv.versionIncrement) {
+                        env.IMAGE_TAG = gv.versionIncrement()
+                        echo "Image tag is: ${env.IMAGE_TAG}"
+                    } else {
+                        error "versionIncrement() method not found in script.groovy"
+                    }
                 }
             }
         }
         stage("Build") {
             steps {
                 script {
-                    sh 'npm install'
-                    sh 'npm run build'
+                    sh 'npm ci'
+                    sh 'npm run build:no-lint'
                 }
             }
         }
-
         stage("Build Docker Image and Push to Docker Hub") {
             steps {
                 script {
-                    def imageNameToPass = "yourdockerhubusername/your-app-name:${env.IMAGE_TAG}"
+                    def imageNameToPass = "harshana2020/opal-system:${env.IMAGE_TAG}"
                     echo "Image name is: ${imageNameToPass}"
 
-                    buildImage imageNameToPass
-                    dockerHubLogin()
-                    dockerHubPush imageNameToPass
+                    // Ensure the buildImage, dockerHubLogin, and dockerHubPush methods are available in the shared library
+                    if (buildImage && dockerHubLogin && dockerHubPush) {
+                        buildImage(imageNameToPass)
+                        dockerHubLogin()
+                        dockerHubPush(imageNameToPass)
+                    } else {
+                        error "Required methods not found in the shared library"
+                    }
                 }
             }
         }
         stage("Deploy") {
             steps {
                 script {
-                    gv.deploy()
+                    // Ensure the deploy method is available in the shared library
+                    if (gv && gv.deploy) {
+                        gv.deploy()
+                    } else {
+                        error "deploy() method not found in script.groovy"
+                    }
                 }
             }
         }
         stage("Commit version update to Git") {
             steps {
                 script {
-                    gv.commitVersionUpdate()
+                    // Ensure the commitVersionUpdate method is available in the shared library
+                    if (gv && gv.commitVersionUpdate) {
+                        gv.commitVersionUpdate()
+                    } else {
+                        error "commitVersionUpdate() method not found in script.groovy"
+                    }
                 }
             }
         }
