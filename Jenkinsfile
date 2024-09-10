@@ -64,14 +64,9 @@ pipeline {
                     def imageNameToPass = "harshana2020/opal-system:${env.IMAGE_TAG}"
                     echo "Image name is: ${imageNameToPass}"
 
-                    // Ensure the buildImage, dockerHubLogin, and dockerHubPush methods are available in the shared library
-                    if (buildImage && dockerHubLogin && dockerHubPush) {
-                        buildImage(imageNameToPass)
-                        dockerHubLogin()
-                        dockerHubPush(imageNameToPass)
-                    } else {
-                        error "Required methods not found in the shared library"
-                    }
+                    buildImage imageNameToPass
+                    dockerHubLogin()
+                    dockerHubPush imageNameToPass
                 }
             }
         }
