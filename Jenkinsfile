@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 // Load the shared library from GitHub
-library identifier: "jenkins-shared-lib@main", retriever: modernSCM(
+library identifier: "shared-lib@main", retriever: modernSCM(
     [
         $class       : 'GitSCMSource',
         remote       : 'https://github.com/UchihaIthachi/jenkins-shared-library',
