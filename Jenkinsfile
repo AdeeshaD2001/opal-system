@@ -25,15 +25,17 @@ pipeline {
                 script {
                     echo "Pipeline initiated by ${params.NAME}"
 
-                    sh 'node --version'
-                    sh 'npm --version'
+                    // Run node and npm commands using 'bat' for Windows
+                    bat 'node --version'
+                    bat 'npm --version'
                     
+                    // Check for package.json on Windows
                     if (!fileExists('package.json')) {
                         error "package.json not found"
                     }
                     echo "package.json contents: ${readFile('package.json')}"
-                    
-                    // Ensure the script.groovy file is loaded correctly
+
+                    // Load script.groovy for Windows
                     if (fileExists('script.groovy')) {
                         gv = load "script.groovy"
                     } else {
@@ -53,8 +55,9 @@ pipeline {
         stage("Build") {
             steps {
                 script {
-                    sh 'npm ci'
-                    sh 'npm run build:no-lint'
+                    // Use 'bat' for Windows
+                    bat 'npm ci'
+                    bat 'npm run build:no-lint'
                 }
             }
         }
@@ -64,6 +67,7 @@ pipeline {
                     def imageNameToPass = "harshana2020/opal-system:${env.IMAGE_TAG}"
                     echo "Image name is: ${imageNameToPass}"
 
+                    // Assuming buildImage, dockerHubLogin, and dockerHubPush are adapted for Windows
                     buildImage imageNameToPass
                     dockerHubLogin()
                     dockerHubPush imageNameToPass
