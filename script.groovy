@@ -24,11 +24,11 @@ def versionIncrement() {
 def deploy() {
     echo "Deploying the app to EC2 instance"
 
-    def dockerCommand = "docker run -d -p 3000:3000 yourdockerhubusername/your-app-name:${env.IMAGE_TAG}"
+    def dockerCommand = "docker run -d -p 3000:3000 harshana2020/opal-system:${env.IMAGE_TAG}"
 
     sshagent(['aws-ec2-ssh']) {
         // Execute SSH command for Windows
-        bat "ssh -o StrictHostKeyChecking=no ec2-user@your-ec2-ip-address ${dockerCommand}"
+        bat "ssh -o StrictHostKeyChecking=no ec2-user@13.210.32.41  ${dockerCommand}"
     }
 }
 
