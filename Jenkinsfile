@@ -20,6 +20,8 @@ pipeline {
         stage("Build Docker Image and Push to Docker Hub") {
             steps {
                 script {
+                    def imageNameToPass = "harshana2020/opal-system:${env.IMAGE_TAG}"
+                    buildImage imageNameToPass
                     dockerHubLogin()
                 }
             }
