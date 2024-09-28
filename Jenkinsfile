@@ -19,6 +19,9 @@ pipeline {
     parameters {
         string(name: 'NAME', defaultValue: 'Harshana Lakshara', description: 'Executor name')
     }
+    environment {
+        IMAGE_NAME = "opal-system"
+    }
     stages {
         stage("Init") {
             steps {
@@ -61,19 +64,33 @@ pipeline {
                 }
             }
         }
-        stage("Build Docker Image and Push to Docker Hub") {
+        stage('Build Docker Image') {
             steps {
                 script {
-                    def imageNameToPass = "harshana2020/opal-system:${env.IMAGE_TAG}"
-                    echo "Image name is: ${imageNameToPass}"
-
-                    // Assuming buildImage, dockerHubLogin, and dockerHubPush are adapted for Windows
-                    buildImage imageNameToPass
-                    dockerHubLogin()
-                    dockerHubPush imageNameToPass
+                    def docker = new com.docker.Docker(this)
+                    docker.buildDockerImage("${env.IMAGE_NAME}")
                 }
             }
         }
+
+        stage('Docker Hub Login') {
+            steps {
+                script {
+                    def docker = new com.docker.Docker(this)
+                    docker.dockerHubLogin()
+                }
+            }
+        }
+
+        stage('Push Docker Image to Docker Hub') {
+            steps {
+                script {
+                    def docker = new com.docker.Docker(this)
+                    docker.dockerHubPush("${env.IMAGE_NAME}")
+                }
+            }
+        }
+    
         stage("Deploy") {
             steps {
                 script {
