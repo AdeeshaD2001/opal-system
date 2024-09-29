@@ -18,6 +18,7 @@ pipeline {
         stage('Test SSH Connection') {
             steps {
                 script {
+                    echo 'Attempting to connect to SSH...'
                     // Use SSH credentials configured in Jenkins (replace 'ec2-user-credentials' with the ID of your Jenkins credentials)
                     sshagent(['aws-ec2-ssh']) {
                         sh 'env | grep SSH'
