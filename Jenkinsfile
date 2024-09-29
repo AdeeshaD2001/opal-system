@@ -23,7 +23,7 @@ pipeline {
                     sshagent(['aws-ec2-ssh']) {
                         sh 'env | grep SSH'
                         sh '''
-                            ssh -o StrictHostKeyChecking=no ec2-user@13.210.32.41 "echo Connected to EC2"
+                            ssh -o StrictHostKeyChecking=no ubuntu@13.210.32.41 "echo Connected to EC2"
                         '''
                     }
                 }
