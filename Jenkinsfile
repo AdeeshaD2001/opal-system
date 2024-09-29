@@ -21,10 +21,10 @@ pipeline {
                     echo 'Attempting to connect to SSH...'
                     // Use SSH credentials configured in Jenkins (replace 'ec2-user-credentials' with the ID of your Jenkins credentials)
                     sshagent(['aws-ec2-ssh']) {
-                        sh 'env | grep SSH'
-                        sh '''
-                            ssh -o StrictHostKeyChecking=no ubuntu@13.210.32.41 "echo Connected to EC2"
-                        '''
+                        // sh 'env | grep SSH'
+                        // sh '''
+                        //     ssh -o StrictHostKeyChecking=no ubuntu@13.210.32.41 "echo Connected to EC2"
+                        // '''
                     }
                 }
             }
